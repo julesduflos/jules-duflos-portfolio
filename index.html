@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
@@ -39,7 +39,13 @@
   <!-- CONTENEUR PRINCIPAL -->
   <main class="container">
 
-    <!-- SECTION VIDÉOS (Grille du croquis : 2 en haut, 2 au milieu, 1 centrée en bas) -->
+    <!-- SECTION TITRE PRINCIPAL (Aligné à gauche) -->
+    <section class="hero-section">
+      <h1 class="hero-title">JULES<br>DUFLOS</h1>
+      <p class="hero-subtitle">IMAGE / CAMERA / LIGHT ASSISTANT</p>
+    </section>
+
+    <!-- SECTION VIDÉOS (Grille : 2 en haut, 2 au milieu, 1 centrée en bas) -->
     <section class="videos-grid">
       
       <!-- VIDÉO 1 -->
@@ -94,11 +100,11 @@
         </div>
       </div>
 
-      <!-- VIDÉO 5 (Centrée en bas du bloc vidéos) -->
+      <!-- VIDÉO 5 (Mise à jour avec ton nouveau fichier R2) -->
       <div class="project-card centered-video">
         <div class="media-container">
           <video autoplay loop muted playsinline>
-            <source src="https://pub-d598919c97b34fd5850a4a1b05d93234.r2.dev/kinect%20v1.mp4" type="video/mp4">
+            <source src="https://pub-d598919c97b34fd5850a4a1b05d93234.r2.dev/kinect-porte-follio-_1_.mp4" type="video/mp4">
           </video>
         </div>
         <div class="project-info">
@@ -152,16 +158,13 @@
   <!-- SCRIPT POUR LES MENUS DÉROULANTS -->
   <script>
     function toggleDropdown(id) {
-      // Ferme l'autre menu s'il est ouvert
       const dropdowns = document.querySelectorAll('.dropdown-container');
       dropdowns.forEach(d => {
         if (d.id !== id) d.classList.remove('active');
       });
-      // Ouvre/ferme celui cliqué
       document.getElementById(id).classList.toggle('active');
     }
 
-    // Ferme les menus si on clique ailleurs sur la page
     window.onclick = function(event) {
       if (!event.target.closest('.dropdown-container')) {
         document.querySelectorAll('.dropdown-container').forEach(d => {
