@@ -158,7 +158,7 @@ body {
 }
 
 .media-container video,
-  .media-container img {
+.media-container img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -211,6 +211,7 @@ body {
   overflow: hidden;
   border: 1px solid #222;
   transition: transform 0.3s ease, border-color 0.3s ease;
+  cursor: pointer;
 }
 
 .photo-card:hover {
@@ -220,6 +221,48 @@ body {
 
 .photo-card .media-container {
   aspect-ratio: 4 / 3;
+}
+
+/* STYLE DE LA MODAL LIGHTBOX (PHOTO EN GRAND) */
+.lightbox-modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  justify-content: center;
+  align-items: center;
+  padding: 3rem; /* Laisse de l'espace sur tous les côtés de l'écran */
+}
+
+.lightbox-modal.active {
+  display: flex;
+}
+
+.lightbox-modal img {
+  max-width: 90%;
+  max-height: 85vh;
+  object-fit: contain;
+  border-radius: 4px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8);
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 1.5rem;
+  right: 2rem;
+  color: #fff;
+  font-size: 2.5rem;
+  font-weight: 300;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.lightbox-close:hover {
+  color: #888;
 }
 
 /* RESPONSIVE MOBILE */
@@ -236,7 +279,7 @@ body {
 
   .videos-grid {
     grid-template-columns: 1fr;
-    gap: 1.5root; /* Correction clean */
+    gap: 1.5rem;
   }
 
   .project-card.centered-video {
@@ -245,5 +288,9 @@ body {
 
   .photos-grid {
     grid-template-columns: 1fr;
+  }
+
+  .lightbox-modal {
+    padding: 1rem;
   }
 }
