@@ -119,7 +119,7 @@ body {
   text-transform: uppercase;
 }
 
-/* GRILLE VIDÉOS (2 par ligne, la 5ème centrée) */
+/* GRILLE VIDÉOS */
 .videos-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -200,7 +200,6 @@ body {
 }
 
 .photos-grid {
-  background-color: transparent;
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   gap: 1.25rem;
