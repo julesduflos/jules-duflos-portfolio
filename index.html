@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jules Duffos - Portfolio | Caméra & Light Assistant</title>
-    <!-- Lien vers les polices Google Fonts (Anton pour le titre) -->
+    <!-- Lien vers les polices Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
@@ -85,7 +85,7 @@
             </div>
         </div>
 
-        <!-- CINQUIÈME VIDÉO CENTRÉE (Kinect) -->
+        <!-- CINQUIÈME VIDÉO CENTRÉE -->
         <div class="videos-grid-centered">
             <div class="project-card project-card-centered-video">
                 <div class="media-container">
@@ -123,7 +123,7 @@
 
     </div>
 
-    <!-- MODAL LIGHTBOX (Visionneuse photo) -->
+    <!-- MODAL LIGHTBOX -->
     <div id="lightbox-modal" class="lightbox-modal" onclick="closeLightbox()">
         <span class="lightbox-close">&times;</span>
         <img id="lightbox-img" src="" alt="Agrandissement photo">
@@ -131,17 +131,12 @@
 
     <!-- SCRIPTS JAVASCRIPT -->
     <script>
-        // Gestion des menus déroulants
         function toggleDropdown(id) {
             const dropdown = document.getElementById(id);
             const allDropdowns = document.querySelectorAll('.dropdown-content');
-            
             allDropdowns.forEach(item => {
-                if (item !== dropdown) {
-                    item.classList.remove('active');
-                }
+                if (item !== dropdown) item.classList.remove('active');
             });
-            
             dropdown.classList.toggle('active');
         }
 
@@ -153,7 +148,6 @@
             }
         }
 
-        // Fonctions Lightbox
         function openLightbox(imgSrc) {
             const modal = document.getElementById('lightbox-modal');
             const lightboxImg = document.getElementById('lightbox-img');
