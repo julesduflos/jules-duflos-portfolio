@@ -6,204 +6,205 @@
 }
 
 body {
-    background-color: #0d0d0d;
+    background-color: #0b0b0b;
     color: #f5f5f7;
-    font-family: -apple-system, system-ui, BlinkMacSystemFont, sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     line-height: 1.5;
-    font-size: 1rem;
-    min-height: 100vh;
+    padding-bottom: 80px;
 }
 
 .container {
     max-width: 1400px;
     margin: 0 auto;
-    padding: 2rem;
+    padding: 0 2rem;
 }
 
-/* NAVBAR & DROPDOWNS */
-header {
+/* HEADER & DROPDOWNS */
+header.header {
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
-    padding: 2rem;
+    align-items: center;
     max-width: 1400px;
     margin: 0 auto;
+    padding: 2.5rem 2rem;
     position: relative;
-    z-index: 10;
+    z-index: 100;
 }
 
 .dropdown-container {
     position: relative;
 }
 
-.dropdown-btn {
-    background: none;
+.dropdown-btn, .dropdown-section-btn {
+    background: transparent;
     border: none;
     color: #f5f5f7;
-    font-size: 0.875rem;
-    font-weight: 500;
-    text-transform: uppercase;
+    font-family: inherit;
+    font-size: 0.9rem;
+    font-weight: 600;
     letter-spacing: 1px;
     cursor: pointer;
-    display: flex;
-    align-items: center;
-    gap: 0.4rem;
-    padding: 0.4rem;
-    transition: color 0.2s ease;
+    transition: opacity 0.2s;
 }
 
-.dropdown-btn:hover {
-    color: #888;
+.dropdown-btn:hover, .dropdown-section-btn:hover {
+    opacity: 0.7;
 }
 
 .dropdown-content {
     display: none;
     position: absolute;
-    top: 100%;
-    right: 0;
-    background-color: #1a1a1a;
-    border: 1px solid #333;
+    top: calc(100% + 10px);
+    left: 0;
+    background-color: #161618;
+    border: 1px solid #26262a;
     border-radius: 4px;
-    padding: 0.5rem 0;
-    min-width: 160px;
+    min-width: 180px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-    z-index: 100;
+    opacity: 0;
+    transform: translateY(-8px);
+    transition: opacity 0.2s ease, transform 0.2s ease;
 }
 
-.dropdown-content.active {
+.dropdown-content.right {
+    left: auto;
+    right: 0;
+}
+
+.dropdown-content.show {
     display: block;
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .dropdown-content a {
-    display: block;
-    padding: 0.5rem 1rem;
     color: #f5f5f7;
+    padding: 12px 16px;
     text-decoration: none;
-    font-size: 0.875rem;
-    transition: background 0.2s ease;
+    display: block;
+    font-size: 0.85rem;
+    letter-spacing: 0.5px;
+    transition: background 0.2s;
 }
 
 .dropdown-content a:hover {
-    background-color: #333;
+    background-color: #222226;
 }
 
-/* TITRE PRINCIPAL & NOM */
-.hero-section {
-    margin: 3rem 0;
-    text-align: center;
+/* LOCALISATION AU CENTRE */
+.location-badge {
+    font-size: 0.85rem;
+    color: #888;
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
 }
 
-.hero-name {
+/* HERO / TITRE PRINCIPAL */
+.hero {
+    max-width: 1400px;
+    margin: 2rem auto 4rem auto;
+    padding: 0 2rem;
+}
+
+.hero h1 {
     font-family: 'Anton', sans-serif;
-    font-size: 3rem;
-    letter-spacing: 3px;
+    font-size.size: 4.5rem;
+    font-size: clamp(3rem, 7vw, 6rem);
+    letter-spacing: 2px;
     font-weight: 400;
-    color: #f5f5f7;
+    line-height: 1;
     margin-bottom: 0.5rem;
 }
 
-.hero-subtitle {
-    font-size: 1rem;
-    color: #888;
-    text-transform: uppercase;
+.subtitle {
+    font-size: 0.85rem;
     letter-spacing: 2px;
-    font-weight: 400;
+    color: #888;
+    font-weight: 500;
 }
 
-/* GRILLE DE 6 VIDEOS (2 colonnes) */
+/* GRILLE DE VIDEOS */
 .videos-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2.5rem;
-    margin-bottom: 5rem;
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    gap: 3rem 2rem;
+    margin-bottom: 6rem;
 }
 
-.project-card {
+@media(max-width: 768px) {
+    .videos-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.video-card {
     display: flex;
     flex-direction: column;
-    gap: 0.8rem;
-    border-radius: 8px;
-    overflow: hidden;
-    border: 1px solid #222;
-    transition: transform 0.3s ease, border-color 0.3s ease;
 }
 
-.project-card:hover {
-    border-color: #444;
-}
-
-.media-container {
-    aspect-ratio: 16 / 9;
+.media-box {
     width: 100%;
-    background-color: #000;
+    aspect-ratio: 16 / 9;
+    background-color: #141414;
+    border-radius: 4px;
     overflow: hidden;
-    border-radius: 6px;
+    border: 1px solid #1f1f22;
 }
 
-.media-container video {
+.media-box video {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    display: block;
 }
 
-.project-info {
+/* Petit espace sous chaque vidéo pour les titres (ex: 1ER AC, ALEXA 35) */
+.video-info {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0.2rem 0.5rem 0.8rem 0.5rem;
-    font-size: 0.875rem;
-}
-
-.project-title {
-    font-weight: 500;
-    color: #f5f5f7;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
-
-.tag {
-    color: #666;
-    font-size: 0.75rem;
-    text-transform: uppercase;
+    padding: 0.8rem 0.2rem 0 0.2rem;
+    font-size: 0.8rem;
     letter-spacing: 1px;
 }
 
-/* SECTION PHOTOGRAPHIE ARGENTIQUE */
-.photo-section {
-    margin-top: 6rem;
-    margin-bottom: 4rem;
-}
-
-.photo-title {
-    font-size: 1.1rem;
-    font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-    margin-bottom: 2rem;
+.v-title {
+    font-weight: 600;
     color: #f5f5f7;
-    text-align: left;
 }
 
-.photo-grid {
+.v-tag {
+    color: #666;
+}
+
+/* SECTION PHOTOS ARGENTIQUES */
+.photos-section {
+    margin-top: 5rem;
+}
+
+.section-title {
+    font-size: 0.95rem;
+    letter-spacing: 2px;
+    font-weight: 600;
+    color: #f5f5f7;
+    margin-bottom: 1.5rem;
+}
+
+.photos-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1.25rem;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
 }
 
 .photo-card {
-    position: relative;
-    border-radius: 6px;
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    background-color: #141414;
+    border-radius: 4px;
     overflow: hidden;
-    aspect-ratio: 4 / 3;
-    background-color: #161616;
-    cursor: pointer;
-    border: 1px solid #222;
-    transition: transform 0.3s ease, border-color 0.3s ease;
-}
-
-.photo-card:hover {
-    border-color: #555;
-    transform: translateY(-2px);
+    border: 1px solid #1f1f22;
 }
 
 .photo-card img {
@@ -211,74 +212,9 @@ header {
     height: 100%;
     object-fit: cover;
     display: block;
+    transition: transform 0.4s ease;
 }
 
-.photo-zoom-tag {
-    position: absolute;
-    bottom: 10px;
-    left: 10px;
-    background: rgba(0, 0, 0, 0.75);
-    backdrop-filter: blur(4px);
-    color: #fff;
-    padding: 0.3rem 0.6rem;
-    font-size: 0.7rem;
-    border-radius: 4px;
-    opacity: 0;
-    transition: opacity 0.2s ease;
-}
-
-.photo-card:hover .photo-zoom-tag {
-    opacity: 1;
-}
-
-/* MODAL LIGHTBOX */
-.lightbox-modal {
-    display: none;
-    position: fixed;
-    z-index: 1000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.9);
-    justify-content: center;
-    align-items: center;
-    padding: 3rem;
-}
-
-.lightbox-modal.active {
-    display: flex;
-}
-
-.lightbox-modal img {
-    max-width: 90%;
-    max-height: 85vh;
-    object-fit: contain;
-    border-radius: 4px;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.8);
-}
-
-.lightbox-close {
-    position: absolute;
-    top: 1.5rem;
-    right: 2rem;
-    color: #fff;
-    font-size: 2.5rem;
-    font-weight: 300;
-    cursor: pointer;
-    transition: color 0.2s ease;
-}
-
-.lightbox-close:hover {
-    color: #888;
-}
-
-/* RESPONSIVE */
-@media (max-width: 900px) {
-    .videos-grid {
-        grid-template-columns: 1fr;
-    }
-    .photo-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
+.photo-card img:hover {
+    transform: scale(1.03);
 }
