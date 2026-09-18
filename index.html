@@ -1,171 +1,85 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jules Duflos — Portfolio</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+<div class="portfolio">
 
-    <!-- HEADER / NAVIGATION -->
-    <header class="header">
-        <!-- Contact à gauche -->
-        <div class="dropdown-container">
-            <button class="dropdown-btn" onclick="toggleDropdown('contact-dropdown')">CONTACT</button>
-            <div id="contact-dropdown" class="dropdown-content">
-                <a href="tel:0651998856">06 51 99 88 56</a>
-                <a href="mailto:julesduflos2@gmail.com">julesduflos2@gmail.com</a>
-            </div>
-        </div>
+  <!-- VIDÉOS -->
 
-        <!-- Localisation au centre -->
-        <div class="location-badge">
-            <span class="pin">📍</span> Paris / Nice
-        </div>
+  <div class="video-grid">
 
-        <!-- Social à droite -->
-        <div class="dropdown-container">
-            <button class="dropdown-section-btn" onclick="toggleDropdown('social-dropdown')">SOCIAL</button>
-            <div id="social-dropdown" class="dropdown-content right">
-                <a href="https://www.instagram.com/julesduflos/" target="_blank">Instagram</a>
-                <a href="https://www.linkedin.com/in/jules-duflos-42846b303/" target="_blank">LinkedIn</a>
-            </div>
-        </div>
-    </header>
+    <div class="media">
+      <video autoplay muted loop playsinline>
+        <source src="VIDEO-1.mp4" type="video/mp4">
+      </video>
+      <div class="caption">Titre vidéo 1</div>
+    </div>
 
-    <!-- SECTION TITRE PRINCIPAL -->
-    <section class="hero">
-        <h1>JULES DUFLOS</h1>
-        <p class="subtitle">IMAGE / CAMERA / LIGHT ASSISTANT</p>
-    </section>
+    <div class="media">
+      <video autoplay muted loop playsinline>
+        <source src="VIDEO-2.mp4" type="video/mp4">
+      </video>
+      <div class="caption">Titre vidéo 2</div>
+    </div>
 
-    <!-- CONTENU PRINCIPAL -->
-    <main class="container">
+    <div class="media">
+      <video autoplay muted loop playsinline>
+        <source src="VIDEO-3.mp4" type="video/mp4">
+      </video>
+      <div class="caption">Titre vidéo 3</div>
+    </div>
 
-        <!-- GRILLE DE VIDEOS (1 à 6) -->
-        <section class="videos-grid">
-            <!-- Vidéo 1 -->
-            <div class="video-card">
-                <div class="media-box">
-                    <video src="Timeline-1.mp4" controls muted playsinline></video>
-                </div>
-                <div class="video-info">
-                    <span class="v-title">PROJET 1</span>
-                    <span class="v-tag">TIMELINE</span>
-                </div>
-            </div>
+    <div class="media">
+      <video autoplay muted loop playsinline>
+        <source src="VIDEO-4.mp4" type="video/mp4">
+      </video>
+      <div class="caption">Titre vidéo 4</div>
+    </div>
 
-            <!-- Vidéo 2 -->
-            <div class="video-card">
-                <div class="media-box">
-                    <video src="VID_20250604_072546_499.mp4" controls muted playsinline></video>
-                </div>
-                <div class="video-info">
-                    <span class="v-title">PROJET 2</span>
-                    <span class="v-tag">TOURNAGE</span>
-                </div>
-            </div>
+    <div class="media">
+      <video autoplay muted loop playsinline>
+        <source src="VIDEO-5.mp4" type="video/mp4">
+      </video>
+      <div class="caption">Titre vidéo 5</div>
+    </div>
 
-            <!-- Vidéo 3 -->
-            <div class="video-card">
-                <div class="media-box">
-                    <video src="VID_20250612_140637_022.mp4" controls muted playsinline></video>
-                </div>
-                <div class="video-info">
-                    <span class="v-title">PROJET 3</span>
-                    <span class="v-tag">CADREUR</span>
-                </div>
-            </div>
+    <div class="media">
+      <video autoplay muted loop playsinline>
+        <source src="VIDEO-6.mp4" type="video/mp4">
+      </video>
+      <div class="caption">Titre vidéo 6</div>
+    </div>
 
-            <!-- Vidéo 4 -->
-            <div class="video-card">
-                <div class="media-box">
-                    <video src="VID_20250613_030058_039.mp4" controls muted playsinline></video>
-                </div>
-                <div class="video-info">
-                    <span class="v-title">PROJET 4</span>
-                    <span class="v-tag">LUMIÈRE</span>
-                </div>
-            </div>
+  </div>
 
-            <!-- Vidéo 5 -->
-            <div class="video-card">
-                <div class="media-box">
-                    <video src="TTB montage.mp4" controls muted playsinline></video>
-                </div>
-                <div class="video-info">
-                    <span class="v-title">PROJET 5</span>
-                    <span class="v-tag">TTB</span>
-                </div>
-            </div>
 
-            <!-- Vidéo 6 -->
-            <div class="video-card">
-                <div class="media-box">
-                    <video src="kinect-porte-follio-_1_.mp4" controls muted playsinline></video>
-                </div>
-                <div class="video-info">
-                    <span class="v-title">PROJET 6</span>
-                    <span class="v-tag">KINECT</span>
-                </div>
-            </div>
-        </section>
+  <!-- PHOTOGRAPHIE ARGENTIQUE -->
 
-        <!-- SECTION PHOTOGRAPHIE ARGENTIQUE SOUS-MARINE -->
-        <section class="photos-section">
-            <h2 class="section-title">PHOTOGRAPHIE ARGENTIQUE SOUS-MARINE</h2>
-            <div class="photos-grid">
-                <div class="photo-card">
-                    <img src="Still 2026-09-09 134125_1.1.1.jpg" alt="Argentique sous-marin 1" loading="lazy">
-                </div>
-                <div class="photo-card">
-                    <img src="Still 2026-09-09 134224_1.4.1.jpg" alt="Argentique sous-marin 2" loading="lazy">
-                </div>
-                <div class="photo-card">
-                    <img src="Still 2026-09-09 134240_1.6.1.jpg" alt="Argentique sous-marin 3" loading="lazy">
-                </div>
-                <div class="photo-card">
-                    <img src="Still 2026-09-09 142249_1.10.1.jpg" alt="Argentique sous-marin 4" loading="lazy">
-                </div>
-                <div class="photo-card">
-                    <img src="Still 2026-09-09 142257_1.11.1.jpg" alt="Argentique sous-marin 5" loading="lazy">
-                </div>
-            </div>
-        </section>
+  <h2>Photographie Argentique Sous-Marine</h2>
 
-    </main>
+  <div class="photo-grid">
 
-    <!-- Script simple pour gérer les menus déroulants -->
-    <script>
-        function toggleDropdown(id) {
-            // Ferme tous les autres menus ouverts
-            const dropdowns = document.getElementsByClassName("dropdown-content");
-            for (let i = 0; i < dropdowns.length; i++) {
-                let openDropdown = dropdowns[i];
-                if (openDropdown.id !== id) {
-                    openDropdown.classList.remove('show');
-                }
-            }
-            // Alterne l'état du menu ciblé
-            document.getElementById(id).classList.toggle("show");
-        }
+    <div class="media">
+      <img src="PHOTO-1.jpg" alt="">
+      <div class="caption">Titre photo 1</div>
+    </div>
 
-        // Ferme les menus si on clique en dehors
-        window.onclick = function(event) {
-            if (!event.target.matches('.dropdown-btn') && !event.target.matches('.dropdown-section-btn')) {
-                const dropdowns = document.getElementsByClassName("dropdown-content");
-                for (let i = 0; i < dropdowns.length; i++) {
-                    let openDropdown = dropdowns[i];
-                    if (openDropdown.classList.contains('show')) {
-                        openDropdown.classList.remove('show');
-                    }
-                }
-            }
-        }
-    </script>
-</body>
-</html>
+    <div class="media">
+      <img src="PHOTO-2.jpg" alt="">
+      <div class="caption">Titre photo 2</div>
+    </div>
+
+    <div class="media">
+      <img src="PHOTO-3.jpg" alt="">
+      <div class="caption">Titre photo 3</div>
+    </div>
+
+    <div class="media">
+      <img src="PHOTO-4.jpg" alt="">
+      <div class="caption">Titre photo 4</div>
+    </div>
+
+    <div class="media">
+      <img src="PHOTO-5.jpg" alt="">
+      <div class="caption">Titre photo 5</div>
+    </div>
+
+  </div>
+
+</div>
