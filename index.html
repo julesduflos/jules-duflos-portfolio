@@ -1,85 +1,178 @@
-<div class="portfolio">
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jules Duflos — Portfolio</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-  <!-- VIDÉOS -->
+<header class="site-header">
+  <a class="header-link" href="mailto:contact@julesduflos.com">Contact</a>
 
-  <div class="video-grid">
+  <p class="header-location">
+    <span class="pin" aria-hidden="true">&#128205;</span> Paris / Nice
+  </p>
 
-    <div class="media">
-      <video autoplay muted loop playsinline>
-        <source src="VIDEO-1.mp4" type="video/mp4">
-      </video>
-      <div class="caption">Titre vidéo 1</div>
+  <div class="social-menu">
+    <button class="header-link social-toggle" id="socialToggle" aria-expanded="false">Social</button>
+    <div class="social-dropdown" id="socialDropdown">
+      <a href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram</a>
     </div>
-
-    <div class="media">
-      <video autoplay muted loop playsinline>
-        <source src="VIDEO-2.mp4" type="video/mp4">
-      </video>
-      <div class="caption">Titre vidéo 2</div>
-    </div>
-
-    <div class="media">
-      <video autoplay muted loop playsinline>
-        <source src="VIDEO-3.mp4" type="video/mp4">
-      </video>
-      <div class="caption">Titre vidéo 3</div>
-    </div>
-
-    <div class="media">
-      <video autoplay muted loop playsinline>
-        <source src="VIDEO-4.mp4" type="video/mp4">
-      </video>
-      <div class="caption">Titre vidéo 4</div>
-    </div>
-
-    <div class="media">
-      <video autoplay muted loop playsinline>
-        <source src="VIDEO-5.mp4" type="video/mp4">
-      </video>
-      <div class="caption">Titre vidéo 5</div>
-    </div>
-
-    <div class="media">
-      <video autoplay muted loop playsinline>
-        <source src="VIDEO-6.mp4" type="video/mp4">
-      </video>
-      <div class="caption">Titre vidéo 6</div>
-    </div>
-
   </div>
+</header>
 
+<main>
 
-  <!-- PHOTOGRAPHIE ARGENTIQUE -->
+  <!-- ===== HERO ===== -->
+  <section class="hero">
+    <h1 class="hero-title">Jules Duflos</h1>
+    <p class="hero-subtitle">Portfolio / Caméra / Light Assistant</p>
+  </section>
 
-  <h2>Photographie Argentique Sous-Marine</h2>
+  <!-- ===== PROJETS (videos) ===== -->
+  <section class="projects">
+    <div class="projects-grid">
 
-  <div class="photo-grid">
+      <article class="project-card">
+        <div class="media placeholder-video" data-file="1ER_AC.mp4">
+          <video muted loop playsinline poster="">
+            <!-- Remplace par l'URL de ta vidéo (ex: depuis ton bucket) -->
+            <source src="videos/1er-ac.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="card-footer">
+          <span class="card-title">1er AC</span>
+          <span class="card-tag">Alexa 35</span>
+        </div>
+      </article>
 
-    <div class="media">
-      <img src="PHOTO-1.jpg" alt="">
-      <div class="caption">Titre photo 1</div>
+      <article class="project-card">
+        <div class="media placeholder-video" data-file="PROJET_2.mp4">
+          <video muted loop playsinline poster="">
+            <source src="videos/projet-2.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="card-footer">
+          <span class="card-title">Projet 2</span>
+          <span class="card-tag">Alexa 35</span>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <div class="media placeholder-video" data-file="PROJET_3.mp4">
+          <video muted loop playsinline poster="">
+            <source src="videos/projet-3.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="card-footer">
+          <span class="card-title">Projet 3</span>
+          <span class="card-tag">Cadreur</span>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <div class="media placeholder-video" data-file="PROJET_4.mp4">
+          <video muted loop playsinline poster="">
+            <source src="videos/projet-4.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="card-footer">
+          <span class="card-title">Projet 4</span>
+          <span class="card-tag">Lumière</span>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <div class="media placeholder-video" data-file="PROJET_5.mp4">
+          <video muted loop playsinline poster="">
+            <source src="videos/projet-5.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="card-footer">
+          <span class="card-title">Projet 5</span>
+          <span class="card-tag">Kinect</span>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <div class="media placeholder-video" data-file="PROJET_6.mp4">
+          <video muted loop playsinline poster="">
+            <source src="videos/projet-6.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="card-footer">
+          <span class="card-title">Projet 6</span>
+          <span class="card-tag">Autre</span>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ===== PHOTOGRAPHIE ARGENTIQUE SOUS-MARINE ===== -->
+  <section class="sous-marine">
+    <div class="sous-marine-title-wrap">
+      <h2 class="sous-marine-title">
+        <span>Photographie Argentique</span>
+        <span>Sous&#8209;Marine</span>
+      </h2>
     </div>
 
-    <div class="media">
-      <img src="PHOTO-2.jpg" alt="">
-      <div class="caption">Titre photo 2</div>
+    <div class="sous-marine-grid">
+
+      <div class="sm-item">
+        <div class="media placeholder-photo" data-file="Still_2026-09-09_134125.jpg">
+          <img src="images/sous-marine/still-134125.jpg" alt="">
+        </div>
+        <div class="sm-caption" contenteditable="true" data-placeholder="Titre à venir"></div>
+      </div>
+
+      <div class="sm-item">
+        <div class="media placeholder-video" data-file="VID_20250604_072546.mp4">
+          <video muted loop playsinline>
+            <source src="videos/sous-marine/vid-20250604-072546.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="sm-caption" contenteditable="true" data-placeholder="Titre à venir"></div>
+      </div>
+
+      <div class="sm-item">
+        <div class="media placeholder-photo" data-file="Still_2026-09-09_134224.jpg">
+          <img src="images/sous-marine/still-134224.jpg" alt="">
+        </div>
+        <div class="sm-caption" contenteditable="true" data-placeholder="Titre à venir"></div>
+      </div>
+
+      <div class="sm-item">
+        <div class="media placeholder-video" data-file="VID_20250612_140637.mp4">
+          <video muted loop playsinline>
+            <source src="videos/sous-marine/vid-20250612-140637.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="sm-caption" contenteditable="true" data-placeholder="Titre à venir"></div>
+      </div>
+
+      <div class="sm-item">
+        <div class="media placeholder-video" data-file="VID_20250613_030058.mp4">
+          <video muted loop playsinline>
+            <source src="videos/sous-marine/vid-20250613-030058.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="sm-caption" contenteditable="true" data-placeholder="Titre à venir"></div>
+      </div>
+
     </div>
+  </section>
 
-    <div class="media">
-      <img src="PHOTO-3.jpg" alt="">
-      <div class="caption">Titre photo 3</div>
-    </div>
+</main>
 
-    <div class="media">
-      <img src="PHOTO-4.jpg" alt="">
-      <div class="caption">Titre photo 4</div>
-    </div>
+<footer class="site-footer">
+  <p>&copy; <span id="year"></span> Jules Duflos</p>
+</footer>
 
-    <div class="media">
-      <img src="PHOTO-5.jpg" alt="">
-      <div class="caption">Titre photo 5</div>
-    </div>
-
-  </div>
-
-</div>
+<script src="script.js"></script>
+</body>
+</html>
