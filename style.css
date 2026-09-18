@@ -321,3 +321,9 @@ a { color: inherit; text-decoration: none; }
   .sous-marine-title-wrap { padding: 36px 28px 32px 0; }
 }
 .site-header .contact-menu { justify-self: start; }
+.site-header {
+  grid-template-columns: auto 1fr auto;
+}
+.contact-menu {
+  justify-self: start;
+}
