@@ -1,196 +1,173 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jules Duflos - Portfolio</title>
-  <link rel="stylesheet" href="style.css?v=7">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jules Duflos - Portfolio/title></title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- HEADER : Contact à gauche, Social à droite -->
-  <header class="navbar">
-    <!-- CONTACT (GAUCHE) -->
-    <div class="dropdown-container" id="contact-dropdown">
-      <button class="dropdown-btn" onclick="toggleDropdown('contact-dropdown')">
-        Contact <span class="arrow">▾</span>
-      </button>
-      <div class="dropdown-content">
-        <a href="tel:0651998856">06 51 99 88 56</a>
-        <a href="mailto:julesduflos2@gmail.com">julesduflos2@gmail.com</a>
-      </div>
+    <!-- HEADER : Contact à gauche, Social à droite -->
+    <header>
+        <div class="contact-container">
+            <button class="contact-btn" id="contact-dropdown">Contact</button>
+            <div class="dropdown-content" id="contact-dropdown">
+                <a href="mailto:julesduflos2gmail.com">julesduflos2gmail.com</a>
+                <a href="https://www.linkedin.com/in/julesduflos/" target="_blank" rel="noopener">LinkedIn</a>
+            </div>
+        </div>
+
+        <div class="dropdown-container">
+            <button class="dropdown-btn" id="social-dropdown">Social</button>
+            <div class="dropdown-content" id="social-dropdown">
+                <a href="https://www.linkedin.com/in/julesduflos/" target="_blank" rel="noopener">LinkedIn</a>
+                <a href="https://www.instagram.com/julesduflos/" target="_blank" rel="noopener">Instagram</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- SECTION PRINCIPALE -->
+    <main class="container">
+
+        <!-- SECTION TITRE PRINCIPAL -->
+        <section class="hero-section">
+            <h1 class="hero-title">PORTFOLIO / CAMERA / LIGHT ASSISTANT</h1>
+        </section>
+
+        <!-- SECTION VIDEOS -->
+        <section class="videos-grid">
+
+            <!-- VIDEO 1 : Mis à jour avec les nouveaux textes -->
+            <div class="project-card">
+                <div class="media-container">
+                    <video autoplay loop muted playsinline>
+                        <source src="https://pub-d598919c97b34fd5850a4a1b05d93234.r2.dev/Timeline-1.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="project-info">
+                    <span class="project-title">1er AC</span>
+                    <span class="tag">alexa 35</span>
+                </div>
+            </div>
+
+            <!-- VIDEO 2 -->
+            <div class="project-card">
+                <div class="media-container">
+                    <video autoplay loop muted playsinline>
+                        <source src="https://pub-d598919c97b34fd5850a4a1b05d93234.r2.dev/VID_20250604_072546_499.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="project-info">
+                    <span class="project-title">Projet 2</span>
+                    <span class="tag">alexa 35</span>
+                </div>
+            </div>
+
+            <!-- VIDEO 3 -->
+            <div class="project-card">
+                <div class="media-container">
+                    <video autoplay loop muted playsinline>
+                        <source src="https://pub-d598919c97b34fd5850a4a1b05d93234.r2.dev/20250612_143637_822.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="project-info">
+                    <span class="project-title">Projet 3</span>
+                    <span class="tag">cadreur</span>
+                </div>
+            </div>
+
+            <!-- VIDEO 4 -->
+            <div class="project-card">
+                <div class="media-container">
+                    <video autoplay loop muted playsinline>
+                        <source src="https://pub-d598919c97b34fd5850a4a1b05d93234.r2.dev/TTB montage.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="project-info">
+                    <span class="project-title">Projet 4</span>
+                    <span class="tag">lumière</span>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- VIDEO 5 : Kinect centrée en bas -->
+        <section class="videos-grid-centered">
+            <div class="project-card project-card-centered-video">
+                <div class="media-container">
+                    <video autoplay loop muted playsinline>
+                        <source src="https://pub-d598919c97b34fd5850a4a1b05d93234.r2.dev/kinect-porte-folio_3.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="project-info">
+                    <span class="project-title">Projet 5</span>
+                    <span class="tag">kinect</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION PHOTOGRAPHIE ARGENTIQUE -->
+        <section class="photo-section">
+            <h2 class="photo-title">PHOTOGRAPHIE ARGENTIQUE</h2>
+            
+            <div class="photo-grid">
+                <div class="photo-card" onclick="openLightbox('https://pub-d598919c97b34fd5850a4a1b05d93234.r2.dev/Still 2026-09-09 134125_1.1.1.jpg')">
+                    <img src="https://pub-d598919c97b34fd5850a4a1b05d93234.r2.dev/Still 2026-09-09 134125_1.1.1.jpg" alt="Photographie argentique 1">
+                    <span class="photo-zoom-tag"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='white' viewBox='0 0 16 16'%3E%3Cpath d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0'%3E%3C/path%3E%3C/svg%3E Agrandissement photo</span>
+                </div>
+                <div class="photo-card" onclick="openLightbox('https://pub-d598919c97b34fd5850a4a1b05d93234.r2.dev/Still 2026-09-09 134324_3.6.1.jpg')">
+                    <img src="https://pub-d598919c97b34fd5850a4a1b05d93234.r2.dev/Still 2026-09-09 134324_3.6.1.jpg" alt="Photographie argentique 2">
+                    <span class="photo-zoom-tag"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='white' viewBox='0 0 16 16'%3E%3Cpath d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0'%3E%3C/path%3E%3C/svg%3E Agrandissement photo</span>
+                </div>
+                <div class="photo-card" onclick="openLightbox('https://pub-d598919c97b34fd5850a4a1b05d93234.r2.dev/Still 2026-09-09 142249_1.1.1.jpg')">
+                    <img src="https://pub-d598919c97b34fd5850a4a1b05d93234.r2.dev/Still 2026-09-09 142249_1.1.1.jpg" alt="Photographie argentique 3">
+                    <span class="photo-zoom-tag"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='white' viewBox='0 0 16 16'%3E%3Cpath d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0'%3E%3C/path%3E%3C/svg%3E Agrandissement photo</span>
+                </div>
+                <div class="photo-card" onclick="openLightbox('https://pub-d598919c97b34fd5850a4a1b05d93234.r2.dev/Still 2026-09-09 142257_1.1.1.jpg')">
+                    <img src="https://pub-d598919c97b34fd5850a4a1b05d93234.r2.dev/Still 2026-09-09 142257_1.1.1.jpg" alt="Photographie argentique 4">
+                    <span class="photo-zoom-tag"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='white' viewBox='0 0 16 16'%3E%3Cpath d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0'%3E%3C/path%3E%3C/svg%3E Agrandissement photo</span>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- MODAL LIGHTBOX -->
+    <div id="lightbox-modal" class="lightbox-modal" onclick="closeLightbox()">
+        <span class="lightbox-close">&times;</span>
+        <img id="lightbox-img" src="" alt="Agrandissement photo">
     </div>
 
-    <!-- SOCIAL (DROITE) -->
-    <div class="dropdown-container" id="social-dropdown">
-      <button class="dropdown-btn" onclick="toggleDropdown('social-dropdown')">
-        Social <span class="arrow">▾</span>
-      </button>
-      <div class="dropdown-content">
-        <a href="https://www.instagram.com/julesduflos/" target="_blank" rel="noopener">Instagram</a>
-        <a href="https://www.linkedin.com/in/jules-duflos-42846b303/" target="_blank" rel="noopener">LinkedIn</a>
-      </div>
-    </div>
-  </header>
-
-  <!-- CONTENEUR PRINCIPAL -->
-  <main class="container">
-
-    <!-- SECTION TITRE PRINCIPAL -->
-    <section class="hero-section">
-      <h1 class="hero-title">JULES<br>DUFLOS</h1>
-      <p class="hero-subtitle">IMAGE / CAMERA / LIGHT ASSISTANT</p>
-    </section>
-
-    <!-- SECTION VIDÉOS -->
-    <section class="videos-grid">
-      
-      <!-- VIDÉO 1 : Timeline-1.mp4 -->
-      <div class="project-card">
-        <div class="media-container">
-          <video autoplay loop muted playsinline>
-            <source src="https://pub-d598919c97b34fd5850a4a1b05d93234.r2.dev/Timeline-1.mp4" type="video/mp4">
-          </video>
-        </div>
-        <div class="project-info">
-          <span>Projet 1</span>
-          <span class="tag">Timeline</span>
-        </div>
-      </div>
-
-      <!-- VIDÉO 2 -->
-      <div class="project-card">
-        <div class="media-container">
-          <video autoplay loop muted playsinline>
-            <source src="https://pub-d598919c97b34fd5850a4a1b05d93234.r2.dev/VID_20250604_072546_499.mp4" type="video/mp4">
-          </video>
-        </div>
-        <div class="project-info">
-          <span>Cadreur</span>
-          <span class="tag">Alexa 35</span>
-        </div>
-      </div>
-
-      <!-- VIDÉO 3 -->
-      <div class="project-card">
-        <div class="media-container">
-          <video autoplay loop muted playsinline>
-            <source src="https://pub-d598919c97b34fd5850a4a1b05d93234.r2.dev/VID_20250612_140637_022.mp4" type="video/mp4">
-          </video>
-        </div>
-        <div class="project-info">
-          <span>Cadreur</span>
-          <span class="tag">Fx3</span>
-        </div>
-      </div>
-
-      <!-- VIDÉO 4 -->
-      <div class="project-card">
-        <div class="media-container">
-          <video autoplay loop muted playsinline>
-            <source src="https://pub-d598919c97b34fd5850a4a1b05d93234.r2.dev/TTB%20montage.mp4" type="video/mp4">
-          </video>
-        </div>
-        <div class="project-info">
-          <span>Cadreur</span>
-          <span class="tag">Fx3 A7s3 Fx6</span>
-        </div>
-      </div>
-
-      <!-- VIDÉO 5 : kinect-porte-follio-_1_.mp4 (Centrée en bas) -->
-      <div class="project-card centered-video">
-        <div class="media-container">
-          <video autoplay loop muted playsinline>
-            <source src="https://pub-d598919c97b34fd5850a4a1b05d93234.r2.dev/kinect-porte-follio-_1_.mp4" type="video/mp4">
-          </video>
-        </div>
-        <div class="project-info">
-          <span>Kinect</span>
-          <span class="tag">3D</span>
-        </div>
-      </div>
-
-    </section>
-
-    <!-- SECTION PHOTOGRAPHIE ARGENTIQUE SOUS-MARINE -->
-    <section class="photo-section">
-      <h2 class="photo-title">Photographie Argentique Sous-Marine</h2>
-      <div class="photos-grid">
-        
-        <div class="photo-card">
-          <div class="media-container">
-            <img src="https://pub-d598919c97b34fd5850a4a1b05d93234.r2.dev/Still%202026-09-09%20134125_1.1.1.jpg" alt="Argentique 1" onclick="openLightbox(this.src)">
-          </div>
-        </div>
-
-        <div class="photo-card">
-          <div class="media-container">
-            <img src="https://pub-d598919c97b34fd5850a4a1b05d93234.r2.dev/Still%202026-09-09%20134224_1.4.1.jpg" alt="Argentique 2" onclick="openLightbox(this.src)">
-          </div>
-        </div>
-
-        <div class="photo-card">
-          <div class="media-container">
-            <img src="https://pub-d598919c97b34fd5850a4a1b05d93234.r2.dev/Still%202026-09-09%20134240_1.6.1.jpg" alt="Argentique 3" onclick="openLightbox(this.src)">
-          </div>
-        </div>
-
-        <div class="photo-card">
-          <div class="media-container">
-            <img src="https://pub-d598919c97b34fd5850a4a1b05d93234.r2.dev/Still%202026-09-09%20142249_1.10.1.jpg" alt="Argentique 4" onclick="openLightbox(this.src)">
-          </div>
-        </div>
-
-        <div class="photo-card">
-          <div class="media-container">
-            <img src="https://pub-d598919c97b34fd5850a4a1b05d93234.r2.dev/Still%202026-09-09%20142257_1.11.1.jpg" alt="Argentique 5" onclick="openLightbox(this.src)">
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-  </main>
-
-  <!-- MODAL LIGHTBOX POUR AFFICHER LA PHOTO EN GRAND -->
-  <div id="lightbox" class="lightbox-modal" onclick="closeLightbox()">
-    <span class="lightbox-close">&times;</span>
-    <img id="lightbox-img" src="" alt="Agrandissement photo">
-  </div>
-
-  <!-- SCRIPT POUR LES MENUS DÉROULANTS ET LA LIGHTBOX -->
-  <script>
-    function toggleDropdown(id) {
-      const dropdowns = document.querySelectorAll('.dropdown-container');
-      dropdowns.forEach(d => {
-        if (d.id !== id) d.classList.remove('active');
-      });
-      document.getElementById(id).classList.toggle('active');
-    }
-
-    window.onclick = function(event) {
-      if (!event.target.closest('.dropdown-container')) {
-        document.querySelectorAll('.dropdown-container').forEach(d => {
-          d.classList.remove('active');
+    <script>
+        // Gestion des menus déroulants
+        window.addEventListener('click', function(event) {
+            const dropdowns = document.querySelectorAll('.dropdown-container');
+            dropdowns.forEach(container => {
+                if (container.contains(event.target)) {
+                    const content = container.querySelector('.dropdown-content');
+                    content.classList.toggle('active');
+                } else {
+                    container.querySelector('.dropdown-content').classList.remove('active');
+                }
+            });
         });
-      }
-    }
 
-    // Fonctions Lightbox
-    function openLightbox(src) {
-      const lightbox = document.getElementById('lightbox');
-      const lightboxImg = document.getElementById('lightbox-img');
-      lightboxImg.src = src;
-      lightbox.classList.add('active');
-    }
+        // Fonctions Lightbox
+        function openLightbox(src) {
+            const lightbox = document.getElementById('lightbox-modal');
+            const lightboxImg = document.getElementById('lightbox-img');
+            lightboxImg.src = src;
+            lightbox.classList.add('active');
+        }
 
-    function closeLightbox() {
-      const lightbox = document.getElementById('lightbox');
-      lightbox.classList.remove('active');
-    }
-  </script>
+        function closeLightbox() {
+            const lightbox = document.getElementById('lightbox-modal');
+            lightbox.classList.remove('active');
+        }
+    </script>
 </body>
 </html>
