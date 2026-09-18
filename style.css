@@ -20,7 +20,7 @@ body {
     padding: 2rem;
 }
 
-/* NAVBAR & DROPDOWNS ANIMÉS */
+/* NAVBAR & DROPDOWNS */
 header {
     display: flex;
     justify-content: space-between;
@@ -87,32 +87,34 @@ header {
     background-color: #333;
 }
 
-/* TITRE PRINCIPAL */
+/* TITRE PRINCIPAL & NOM */
 .hero-section {
     margin: 3rem 0;
     text-align: center;
 }
 
-.hero-title {
+.hero-name {
     font-family: 'Anton', sans-serif;
-    font-size: 2.5rem;
-    letter-spacing: 2px;
+    font-size: 3rem;
+    letter-spacing: 3px;
     font-weight: 400;
     color: #f5f5f7;
+    margin-bottom: 0.5rem;
 }
 
-/* GRILLE VIDEOS (4 premières vidéos) */
+.hero-subtitle {
+    font-size: 1rem;
+    color: #888;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 400;
+}
+
+/* GRILLE DE 6 VIDEOS (2 colonnes) */
 .videos-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 2.5rem;
-    margin-bottom: 2.5rem;
-}
-
-/* GRILLE CENTREE POUR LA VIDEO 5 (Kinect) */
-.videos-grid-centered {
-    display: flex;
-    justify-content: center;
     margin-bottom: 5rem;
 }
 
@@ -128,10 +130,6 @@ header {
 
 .project-card:hover {
     border-color: #444;
-}
-
-.project-card-centered-video {
-    width: 50%;
 }
 
 .media-container {
@@ -187,8 +185,8 @@ header {
 }
 
 .photo-grid {
-    grid-template-columns: repeat(4, 1fr);
     display: grid;
+    grid-template-columns: repeat(4, 1fr);
     gap: 1.25rem;
 }
 
@@ -233,7 +231,7 @@ header {
     opacity: 1;
 }
 
-/* STYLE DE LA MODAL LIGHTBOX */
+/* MODAL LIGHTBOX */
 .lightbox-modal {
     display: none;
     position: fixed;
@@ -275,13 +273,10 @@ header {
     color: #888;
 }
 
-/* RESPONSIVE DESIGN */
+/* RESPONSIVE */
 @media (max-width: 900px) {
     .videos-grid {
         grid-template-columns: 1fr;
-    }
-    .project-card-centered-video {
-        width: 100%;
     }
     .photo-grid {
         grid-template-columns: repeat(2, 1fr);
