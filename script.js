@@ -96,3 +96,54 @@ if (lightboxModal && photoItems.length > 0) {
     if (e.key === 'ArrowLeft') lightboxPrev.click();
   });
 }
+// ==========================================
+// Lightbox ultra-simple et directe
+// ==========================================
+document.addEventListener('DOMContentLoaded', () => {
+  const images = document.querySelectorAll('.sous-marine img');
+  
+  if (images.length === 0) return;
+
+  // Création automatique de la modale dans la page si elle n'y est pas
+  const modal = document.createElement('div');
+  modal.id = 'customLightbox';
+  modal.style.cssText = 'display:none; position:fixed; inset:0; z-index:9999; background:rgba(0,0,0,0.9); justify-content:center; align-items:center; cursor:pointer;';
+  
+  const imgElement = document.createElement('img');
+  imgElement.style.cssText = 'max-width:90vw; max-height:90vh; object-fit:contain; border-radius:4px;';
+  modal.appendChild(imgElement);
+  document.body.appendChild(modal);
+
+  let currentIndex = 0;
+  const imageSources = Array.from(images).map(img => img.src);
+
+  images.forEach((img, index) => {
+    img.style.cursor = 'pointer';
+    img.addEventListener('click', (e) => {
+      e.preventDefault();
+      currentIndex = index;
+      imgElement.src = imageSources[currentIndex];
+      modal.style.display = 'flex';
+    });
+  });
+
+  // Fermer au clic sur le fond noir
+  modal.addEventListener('click', () => {
+    modal.style.display = 'none';
+  });
+
+  // Navigation avec les flèches du clavier ou Échap
+  document.addEventListener('keydown', (e) => {
+    if (modal.style.display === 'flex') {
+      if (e.key === 'Escape') {
+        modal.style.display = 'none';
+      } else if (e.key === 'ArrowRight') {
+        currentIndex = (currentIndex + 1) % imageSources.length;
+        imgElement.src = imageSources[currentIndex];
+      } else if (e.key === 'ArrowLeft') {
+        currentIndex = (currentIndex - 1 + imageSources.length) % imageSources.length;
+        imgElement.src = imageSources[currentIndex];
+      }
+    }
+  });
+});
