@@ -3,158 +3,168 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jules Duffos - Portfolio | Caméra & Light Assistant</title>
+    <title>Jules Duflos — Portfolio</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <header>
+    <!-- HEADER / NAVIGATION -->
+    <header class="header">
+        <!-- Contact à gauche -->
         <div class="dropdown-container">
             <button class="dropdown-btn" onclick="toggleDropdown('contact-dropdown')">CONTACT</button>
             <div id="contact-dropdown" class="dropdown-content">
-                <a href="mailto:julesduffos1@gmail.com">julesduffos1@gmail.com</a>
-                <a href="tel:+33000000000">+33 6 00 00 00 00</a>
+                <a href="tel:0651998856">06 51 99 88 56</a>
+                <a href="mailto:julesduflos2@gmail.com">julesduflos2@gmail.com</a>
             </div>
         </div>
 
+        <!-- Localisation au centre -->
+        <div class="location-badge">
+            <span class="pin">📍</span> Paris / Nice
+        </div>
+
+        <!-- Social à droite -->
         <div class="dropdown-container">
-            <button class="dropdown-btn" onclick="toggleDropdown('social-dropdown')">SOCIAL</button>
-            <div id="social-dropdown" class="dropdown-content">
-                <a href="https://www.linkedin.com/in/jules-duffos/" target="_blank">LinkedIn</a>
-                <a href="https://www.instagram.com" target="_blank">Instagram</a>
+            <button class="dropdown-section-btn" onclick="toggleDropdown('social-dropdown')">SOCIAL</button>
+            <div id="social-dropdown" class="dropdown-content right">
+                <a href="https://www.instagram.com/julesduflos/" target="_blank">Instagram</a>
+                <a href="https://www.linkedin.com/in/jules-duflos-42846b303/" target="_blank">LinkedIn</a>
             </div>
         </div>
     </header>
 
-    <div class="container">
+    <!-- SECTION TITRE PRINCIPAL -->
+    <section class="hero">
+        <h1>JULES DUFLOS</h1>
+        <p class="subtitle">IMAGE / CAMERA / LIGHT ASSISTANT</p>
+    </section>
 
-        <section class="hero-section">
-            <h1 class="hero-name">JULES DUFFOS</h1>
-            <p class="hero-subtitle">PORTFOLIO / CAMERA / LIGHT ASSISTANT</p>
-        </section>
+    <!-- CONTENU PRINCIPAL -->
+    <main class="container">
 
-        <div class="videos-grid">
-            <div class="project-card">
-                <div class="media-container">
-                    <video src="TTB montage.mp4" autoplay muted loop playsinline></video>
+        <!-- GRILLE DE VIDEOS (1 à 6) -->
+        <section class="videos-grid">
+            <!-- Vidéo 1 -->
+            <div class="video-card">
+                <div class="media-box">
+                    <video src="Timeline-1.mp4" controls muted playsinline></video>
                 </div>
-                <div class="project-info">
-                    <span class="project-title">1ER AC</span>
-                    <span class="tag">ALEXA 35</span>
+                <div class="video-info">
+                    <span class="v-title">PROJET 1</span>
+                    <span class="v-tag">TIMELINE</span>
                 </div>
             </div>
 
-            <div class="project-card">
-                <div class="media-container">
-                    <video src="Timeline-1.mp4" autoplay muted loop playsinline></video>
+            <!-- Vidéo 2 -->
+            <div class="video-card">
+                <div class="media-box">
+                    <video src="VID_20250604_072546_499.mp4" controls muted playsinline></video>
                 </div>
-                <div class="project-info">
-                    <span class="project-title">PROJET 2</span>
-                    <span class="tag">ALEXA 35</span>
-                </div>
-            </div>
-
-            <div class="project-card">
-                <div class="media-container">
-                    <video src="VID_20250604_072546_499.mp4" autoplay muted loop playsinline></video>
-                </div>
-                <div class="project-info">
-                    <span class="project-title">PROJET 3</span>
-                    <span class="tag">CADREUR</span>
+                <div class="video-info">
+                    <span class="v-title">PROJET 2</span>
+                    <span class="v-tag">TOURNAGE</span>
                 </div>
             </div>
 
-            <div class="project-card">
-                <div class="media-container">
-                    <video src="VID_20250612_140637_022.mp4" autoplay muted loop playsinline></video>
+            <!-- Vidéo 3 -->
+            <div class="video-card">
+                <div class="media-box">
+                    <video src="VID_20250612_140637_022.mp4" controls muted playsinline></video>
                 </div>
-                <div class="project-info">
-                    <span class="project-title">PROJET 4</span>
-                    <span class="tag">LUMIÈRE</span>
-                </div>
-            </div>
-
-            <div class="project-card">
-                <div class="media-container">
-                    <video src="kinect-porte-follio_-1.mp4" autoplay muted loop playsinline></video>
-                </div>
-                <div class="project-info">
-                    <span class="project-title">PROJET 5</span>
-                    <span class="tag">KINECT</span>
+                <div class="video-info">
+                    <span class="v-title">PROJET 3</span>
+                    <span class="v-tag">CADREUR</span>
                 </div>
             </div>
 
-            <div class="project-card">
-                <div class="media-container">
-                    <video src="Timeline-1.mp4" autoplay muted loop playsinline></video>
+            <!-- Vidéo 4 -->
+            <div class="video-card">
+                <div class="media-box">
+                    <video src="VID_20250613_030058_039.mp4" controls muted playsinline></video>
                 </div>
-                <div class="project-info">
-                    <span class="project-title">PROJET 6</span>
-                    <span class="tag">AUTRE</span>
+                <div class="video-info">
+                    <span class="v-title">PROJET 4</span>
+                    <span class="v-tag">LUMIÈRE</span>
                 </div>
             </div>
-        </div>
 
-        <section class="photo-section">
-            <h2 class="photo-title">PHOTOGRAPHIE ARGENTIQUE</h2>
-            <div class="photo-grid">
-                <div class="photo-card" onclick="openLightbox('Still 2026-09-09 134125_1.1.1.jpg')">
-                    <img src="Still 2026-09-09 134125_1.1.1.jpg" alt="Photo argentique">
-                    <div class="photo-zoom-tag">Agrandir</div>
+            <!-- Vidéo 5 -->
+            <div class="video-card">
+                <div class="media-box">
+                    <video src="TTB montage.mp4" controls muted playsinline></video>
                 </div>
-                <div class="photo-card" onclick="openLightbox('Still 2026-09-09 134224_1.4.1.jpg')">
-                    <img src="Still 2026-09-09 134224_1.4.1.jpg" alt="Photo argentique">
-                    <div class="photo-zoom-tag">Agrandir</div>
+                <div class="video-info">
+                    <span class="v-title">PROJET 5</span>
+                    <span class="v-tag">TTB</span>
                 </div>
-                <div class="photo-card" onclick="openLightbox('Still 2026-09-09 134240_1.6.1.jpg')">
-                    <img src="Still 2026-09-09 134240_1.6.1.jpg" alt="Photo argentique">
-                    <div class="photo-zoom-tag">Agrandir</div>
+            </div>
+
+            <!-- Vidéo 6 -->
+            <div class="video-card">
+                <div class="media-box">
+                    <video src="kinect-porte-follio-_1_.mp4" controls muted playsinline></video>
                 </div>
-                <div class="photo-card" onclick="openLightbox('Still 2026-09-09 142249_1.10.1.jpg')">
-                    <img src="Still 2026-09-09 142249_1.10.1.jpg" alt="Photo argentique">
-                    <div class="photo-zoom-tag">Agrandir</div>
+                <div class="video-info">
+                    <span class="v-title">PROJET 6</span>
+                    <span class="v-tag">KINECT</span>
                 </div>
             </div>
         </section>
 
-    </div>
+        <!-- SECTION PHOTOGRAPHIE ARGENTIQUE SOUS-MARINE -->
+        <section class="photos-section">
+            <h2 class="section-title">PHOTOGRAPHIE ARGENTIQUE SOUS-MARINE</h2>
+            <div class="photos-grid">
+                <div class="photo-card">
+                    <img src="Still 2026-09-09 134125_1.1.1.jpg" alt="Argentique sous-marin 1" loading="lazy">
+                </div>
+                <div class="photo-card">
+                    <img src="Still 2026-09-09 134224_1.4.1.jpg" alt="Argentique sous-marin 2" loading="lazy">
+                </div>
+                <div class="photo-card">
+                    <img src="Still 2026-09-09 134240_1.6.1.jpg" alt="Argentique sous-marin 3" loading="lazy">
+                </div>
+                <div class="photo-card">
+                    <img src="Still 2026-09-09 142249_1.10.1.jpg" alt="Argentique sous-marin 4" loading="lazy">
+                </div>
+                <div class="photo-card">
+                    <img src="Still 2026-09-09 142257_1.11.1.jpg" alt="Argentique sous-marin 5" loading="lazy">
+                </div>
+            </div>
+        </section>
 
-    <div id="lightbox-modal" class="lightbox-modal" onclick="closeLightbox()">
-        <span class="lightbox-close">&times;</span>
-        <img id="lightbox-img" src="" alt="Agrandissement photo">
-    </div>
+    </main>
 
+    <!-- Script simple pour gérer les menus déroulants -->
     <script>
         function toggleDropdown(id) {
-            const dropdown = document.getElementById(id);
-            const allDropdowns = document.querySelectorAll('.dropdown-content');
-            allDropdowns.forEach(item => {
-                if (item !== dropdown) item.classList.remove('active');
-            });
-            dropdown.classList.toggle('active');
-        }
-
-        window.onclick = function(event) {
-            if (!event.target.matches('.dropdown-btn')) {
-                document.querySelectorAll('.dropdown-content').forEach(item => {
-                    item.classList.remove('active');
-                });
+            // Ferme tous les autres menus ouverts
+            const dropdowns = document.getElementsByClassName("dropdown-content");
+            for (let i = 0; i < dropdowns.length; i++) {
+                let openDropdown = dropdowns[i];
+                if (openDropdown.id !== id) {
+                    openDropdown.classList.remove('show');
+                }
             }
+            // Alterne l'état du menu ciblé
+            document.getElementById(id).classList.toggle("show");
         }
 
-        function openLightbox(imgSrc) {
-            const modal = document.getElementById('lightbox-modal');
-            const lightboxImg = document.getElementById('lightbox-img');
-            lightboxImg.src = imgSrc;
-            modal.classList.add('active');
-        }
-
-        function closeLightbox() {
-            const modal = document.getElementById('lightbox-modal');
-            modal.classList.remove('active');
+        // Ferme les menus si on clique en dehors
+        window.onclick = function(event) {
+            if (!event.target.matches('.dropdown-btn') && !event.target.matches('.dropdown-section-btn')) {
+                const dropdowns = document.getElementsByClassName("dropdown-content");
+                for (let i = 0; i < dropdowns.length; i++) {
+                    let openDropdown = dropdowns[i];
+                    if (openDropdown.classList.contains('show')) {
+                        openDropdown.classList.remove('show');
+                    }
+                }
+            }
         }
     </script>
 </body>
