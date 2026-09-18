@@ -1,296 +1,298 @@
 /* RESET ET BASES */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-  background-color: #0d0d0d;
-  color: #f5f5f7;
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-  line-height: 1.5;
-  padding: 2rem;
-  min-height: 100vh;
+    background-color: #0d0d0d;
+    color: #f5f5f7;
+    font-family: -apple-system, system-ui, BlinkMacSystemFont, sans-serif;
+    line-height: 1.5;
+    font-size: 1rem;
+    min-height: 100vh;
 }
 
 .container {
-  max-width: 1400px;
-  margin: 0 auto;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 2rem;
 }
 
 /* NAVBAR & DROPDOWNS ANIMÉS */
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  max-width: 1400px;
-  margin: 0 auto 3rem auto;
-  position: relative;
-  z-index: 10;
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 10;
 }
 
 .dropdown-container {
-  position: relative;
+    position: relative;
 }
 
-.dropdown-btn {
-  background: none;
-  border: none;
-  color: #f5f5f7;
-  font-size: 0.95rem;
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  gap: 0.4rem;
-  padding: 0.5rem 0;
-  transition: color 0.2s ease;
+.dropdown-btn, .contact-btn {
+    background: none;
+    border: none;
+    color: #f5f5f7;
+    font-size: 0.875rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.4rem;
+    transition: color 0.2s ease;
 }
 
-.dropdown-btn:hover {
-  color: #888;
+.dropdown-btn:hover, .contact-btn:hover {
+    color: #888;
 }
 
 .dropdown-content {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  background-color: #141414;
-  border: 1px solid #222;
-  border-radius: 6px;
-  padding: 0.5rem 0;
-  min-width: 200px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.5);
-  
-  max-height: 0;
-  overflow: hidden;
-  opacity: 0;
-  transform: translateY(-8px);
-  transition: max-height 0.3s cubic-bezier(0.25, 1, 0.5, 1), 
-              opacity 0.3s ease, 
-              transform 0.3s ease;
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: #1a1a1a;
+    border: 1px solid #333;
+    border-radius: 4px;
+    padding: 0.5rem 0;
+    min-width: 160px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    z-index: 100;
 }
 
-.dropdown-container.active .dropdown-content {
-  max-height: 150px;
-  opacity: 1;
-  transform: translateY(0);
+.dropdown-content.active {
+    display: block;
 }
 
 .dropdown-content a {
-  display: block;
-  padding: 0.6rem 1rem;
-  color: #aaa;
-  text-decoration: none;
-  font-size: 0.9rem;
-  transition: background 0.2s ease, color 0.2s ease;
+    display: block;
+    padding: 0.5rem 1rem;
+    color: #f5f5f7;
+    text-decoration: none;
+    font-size: 0.875rem;
+    transition: background 0.2s ease;
 }
 
 .dropdown-content a:hover {
-  background-color: #1f1f1f;
-  color: #fff;
+    background-color: #333;
 }
 
-/* SECTION TITRE PRINCIPAL (Aligné à gauche) */
+/* TITRE PRINCIPAL */
 .hero-section {
-  margin-bottom: 3.5rem;
-  text-align: left;
+    margin: 3rem 0;
+    text-align: center;
 }
 
 .hero-title {
-  font-family: 'Anton', sans-serif;
-  font-size: clamp(3.5rem, 8vw, 7.5rem);
-  line-height: 0.95;
-  text-transform: uppercase;
-  letter-spacing: -0.01em;
-  color: #f5f5f7;
-  margin-bottom: 1rem;
+    font-family: 'Anton', sans-serif;
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+    font-weight: 400;
+    color: #f5f5f7;
 }
 
-.hero-subtitle {
-  font-family: 'Inter', sans-serif;
-  color: #888;
-  font-size: 0.9rem;
-  font-weight: 500;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-}
-
-/* GRILLE VIDÉOS */
+/* GRILLE VIDEOS (4 premières vidéos) */
 .videos-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 2.5rem;
-  margin-bottom: 5rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.5rem;
+    margin-bottom: 2.5rem;
+}
+
+/* GRILLE CENTREE POUR LA VIDEO 5 (Kinect) */
+.videos-grid-centered {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 5rem;
 }
 
 .project-card {
-  display: flex;
-  flex-direction: column;
-  background: #141414;
-  border-radius: 8px;
-  overflow: hidden;
-  border: 1px solid #222;
-  transition: transform 0.3s ease, border-color 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid #222;
+    transition: transform 0.3s ease, border-color 0.3s ease;
 }
 
 .project-card:hover {
-  transform: translateY(-4px);
-  border-color: #444;
+    border-color: #444;
 }
 
-.project-card.centered-video {
-  grid-column: 1 / -1;
-  max-width: 50%;
-  margin: 0 auto;
-  width: 100%;
+/* Largeur spécifique pour la carte centrée de la vidéo 5 */
+.project-card-centered-video {
+    width: 50%;
 }
 
 .media-container {
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  background-color: #000;
-  overflow: hidden;
-  position: relative;
+    aspect-ratio: 16 / 9;
+    width: 100%;
+    background-color: #000;
+    overflow: hidden;
+    border-radius: 6px;
 }
 
-.media-container video,
-.media-container img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
+.media-container video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .project-info {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 1.25rem;
-  font-size: 0.85rem;
-  color: #ccc;
-  border-top: 1px solid #1a1a1a;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.2rem 0.5rem 0.8rem 0.5rem;
+    font-size: 0.875rem;
+}
+
+.project-title {
+    font-weight: 500;
+    color: #f5f5f7;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
 .tag {
-  color: #666;
-  text-transform: uppercase;
-  font-size: 0.75rem;
-  letter-spacing: 1px;
+    color: #666;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 /* SECTION PHOTOGRAPHIE ARGENTIQUE */
 .photo-section {
-  margin-top: 4rem;
-  border-top: 1px solid #222;
-  padding-top: 3rem;
+    margin-top: 6rem;
+    margin-bottom: 4rem;
 }
 
 .photo-title {
-  font-size: 1.1rem;
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  color: #f5f5f7;
-  margin-bottom: 1.5rem;
-  text-align: left;
+    font-size: 1.1rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 2rem;
+    color: #f5f5f7;
+    text-align: left;
 }
 
-.photos-grid {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 1.25rem;
+.photo-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.25rem;
 }
 
 .photo-card {
-  background: #141414;
-  border-radius: 6px;
-  overflow: hidden;
-  border: 1px solid #222;
-  transition: transform 0.3s ease, border-color 0.3s ease;
-  cursor: pointer;
+    position: relative;
+    border-radius: 6px;
+    overflow: hidden;
+    aspect-ratio: 4 / 3;
+    background-color: #161616;
+    cursor: pointer;
+    border: 1px solid #222;
+    transition: transform 0.3s ease, border-color 0.3s ease;
 }
 
 .photo-card:hover {
-  transform: translateY(-3px);
-  border-color: #444;
+    border-color: #555;
+    transform: translateY(-2px);
 }
 
-.photo-card .media-container {
-  aspect-ratio: 4 / 3;
+.photo-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.photo-zoom-tag {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    background: rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(4px);
+    color: #fff;
+    padding: 0.3rem 0.6rem;
+    font-size: 0.7rem;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+.photo-card:hover .photo-zoom-tag {
+    opacity: 1;
+}
+
+.photo-zoom-tag img {
+    width: 12px;
+    height: 12px;
 }
 
 /* STYLE DE LA MODAL LIGHTBOX (PHOTO EN GRAND) */
 .lightbox-modal {
-  display: none;
-  position: fixed;
-  z-index: 1000;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.9);
-  justify-content: center;
-  align-items: center;
-  padding: 3rem; /* Laisse de l'espace sur tous les côtés de l'écran */
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    justify-content: center;
+    align-items: center;
+    padding: 3rem;
 }
 
 .lightbox-modal.active {
-  display: flex;
+    display: flex;
 }
 
 .lightbox-modal img {
-  max-width: 90%;
-  max-height: 85vh;
-  object-fit: contain;
-  border-radius: 4px;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8);
+    max-width: 90%;
+    max-height: 85vh;
+    object-fit: contain;
+    border-radius: 4px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.8);
 }
 
 .lightbox-close {
-  position: absolute;
-  top: 1.5rem;
-  right: 2rem;
-  color: #fff;
-  font-size: 2.5rem;
-  font-weight: 300;
-  cursor: pointer;
-  transition: color 0.2s ease;
+    position: absolute;
+    top: 1.5rem;
+    right: 2rem;
+    color: #fff;
+    font-size: 2.5rem;
+    font-weight: 300;
+    cursor: pointer;
+    transition: color 0.2s ease;
 }
 
 .lightbox-close:hover {
-  color: #888;
+    color: #888;
 }
 
-/* RESPONSIVE MOBILE */
+/* RESPONSIVE DESIGN */
 @media (max-width: 900px) {
-  .photos-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 768px) {
-  body {
-    padding: 1rem;
-  }
-
-  .videos-grid {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-  }
-
-  .project-card.centered-video {
-    max-width: 100%;
-  }
-
-  .photos-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .lightbox-modal {
-    padding: 1rem;
-  }
+    .videos-grid {
+        grid-template-columns: 1fr;
+    }
+    .project-card-centered-video {
+        width: 100%;
+    }
+    .photo-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
