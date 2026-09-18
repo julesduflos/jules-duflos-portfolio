@@ -1,220 +1,111 @@
-/* RESET ET BASES */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+/* =========================
+   PORTFOLIO
+   ========================= */
+
+.portfolio {
+  width: 100%;
+  margin: 0;
+  padding: 0;
 }
 
-body {
-    background-color: #0b0b0b;
-    color: #f5f5f7;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    line-height: 1.5;
-    padding-bottom: 80px;
+
+/* =========================
+   VIDÉOS — 2 COLONNES
+   ========================= */
+
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0;
+  width: 100%;
 }
 
-.container {
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 0 2rem;
+
+/* =========================
+   PHOTOS — 5 COLONNES
+   ========================= */
+
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0;
+  width: 100%;
 }
 
-/* HEADER & DROPDOWNS */
-header.header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 2.5rem 2rem;
-    position: relative;
-    z-index: 100;
+
+/* =========================
+   MÉDIAS
+   ========================= */
+
+.media {
+  margin: 0;
+  padding: 0;
+  min-width: 0;
 }
 
-.dropdown-container {
-    position: relative;
+
+/* VIDÉOS */
+
+.media video {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0;
+  padding: 0;
+  object-fit: cover;
 }
 
-.dropdown-btn, .dropdown-section-btn {
-    background: transparent;
-    border: none;
-    color: #f5f5f7;
-    font-family: inherit;
-    font-size: 0.9rem;
-    font-weight: 600;
-    letter-spacing: 1px;
-    cursor: pointer;
-    transition: opacity 0.2s;
+
+/* PHOTOS */
+
+.media img {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0;
+  padding: 0;
+  object-fit: cover;
 }
 
-.dropdown-btn:hover, .dropdown-section-btn:hover {
-    opacity: 0.7;
+
+/* =========================
+   TITRE DE SECTION
+   ========================= */
+
+.portfolio h2 {
+  margin: 18px 0 10px 0;
+  padding: 0;
+
+  color: #f1f0e9;
+
+  font-family: "Arial Narrow",
+               "Helvetica Neue",
+               Arial,
+               sans-serif;
+
+  font-size: 20px;
+  font-weight: 700;
+
+  letter-spacing: -0.04em;
+  line-height: 1;
 }
 
-.dropdown-content {
-    display: none;
-    position: absolute;
-    top: calc(100% + 10px);
-    left: 0;
-    background-color: #161618;
-    border: 1px solid #26262a;
-    border-radius: 4px;
-    min-width: 180px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-    opacity: 0;
-    transform: translateY(-8px);
-    transition: opacity 0.2s ease, transform 0.2s ease;
-}
 
-.dropdown-content.right {
-    left: auto;
-    right: 0;
-}
+/* =========================
+   TITRES SOUS LES MÉDIAS
+   ========================= */
 
-.dropdown-content.show {
-    display: block;
-    opacity: 1;
-    transform: translateY(0);
-}
+.caption {
+  height: 20px;
 
-.dropdown-content a {
-    color: #f5f5f7;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-    font-size: 0.85rem;
-    letter-spacing: 0.5px;
-    transition: background 0.2s;
-}
+  margin: 6px 0 18px 0;
+  padding: 0;
 
-.dropdown-content a:hover {
-    background-color: #222226;
-}
+  color: #f1f0e9;
 
-/* LOCALISATION AU CENTRE */
-.location-badge {
-    font-size: 0.85rem;
-    color: #888;
-    letter-spacing: 1px;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-}
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 10px;
+  font-weight: 400;
 
-/* HERO / TITRE PRINCIPAL */
-.hero {
-    max-width: 1400px;
-    margin: 2rem auto 4rem auto;
-    padding: 0 2rem;
-}
-
-.hero h1 {
-    font-family: 'Anton', sans-serif;
-    font-size.size: 4.5rem;
-    font-size: clamp(3rem, 7vw, 6rem);
-    letter-spacing: 2px;
-    font-weight: 400;
-    line-height: 1;
-    margin-bottom: 0.5rem;
-}
-
-.subtitle {
-    font-size: 0.85rem;
-    letter-spacing: 2px;
-    color: #888;
-    font-weight: 500;
-}
-
-/* GRILLE DE VIDEOS */
-.videos-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
-    gap: 3rem 2rem;
-    margin-bottom: 6rem;
-}
-
-@media(max-width: 768px) {
-    .videos-grid {
-        grid-template-columns: 1fr;
-    }
-}
-
-.video-card {
-    display: flex;
-    flex-direction: column;
-}
-
-.media-box {
-    width: 100%;
-    aspect-ratio: 16 / 9;
-    background-color: #141414;
-    border-radius: 4px;
-    overflow: hidden;
-    border: 1px solid #1f1f22;
-}
-
-.media-box video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-}
-
-/* Petit espace sous chaque vidéo pour les titres (ex: 1ER AC, ALEXA 35) */
-.video-info {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0.8rem 0.2rem 0 0.2rem;
-    font-size: 0.8rem;
-    letter-spacing: 1px;
-}
-
-.v-title {
-    font-weight: 600;
-    color: #f5f5f7;
-}
-
-.v-tag {
-    color: #666;
-}
-
-/* SECTION PHOTOS ARGENTIQUES */
-.photos-section {
-    margin-top: 5rem;
-}
-
-.section-title {
-    font-size: 0.95rem;
-    letter-spacing: 2px;
-    font-weight: 600;
-    color: #f5f5f7;
-    margin-bottom: 1.5rem;
-}
-
-.photos-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 1.5rem;
-}
-
-.photo-card {
-    width: 100%;
-    aspect-ratio: 4 / 5;
-    background-color: #141414;
-    border-radius: 4px;
-    overflow: hidden;
-    border: 1px solid #1f1f22;
-}
-
-.photo-card img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-    transition: transform 0.4s ease;
-}
-
-.photo-card img:hover {
-    transform: scale(1.03);
+  line-height: 1.2;
 }
