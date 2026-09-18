@@ -1,28 +1,42 @@
-// Social dropdown toggle
-const socialToggle = document.getElementById('socialToggle');
-const socialDropdown = document.getElementById('socialDropdown');
+// Fonction générique pour gérer un menu déroulant
+function setupDropdown(toggleId, dropdownId) {
+  const toggle = document.getElementById(toggleId);
+  const dropdown = document.getElementById(dropdownId);
 
-if (socialToggle && socialDropdown) {
-  socialToggle.addEventListener('click', (e) => {
-    e.stopPropagation();
-    const isOpen = socialDropdown.classList.toggle('is-open');
-    socialToggle.setAttribute('aria-expanded', String(isOpen));
-  });
+  if (toggle && dropdown) {
+    toggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      // Ferme l'autre menu s'il est ouvert
+      document.querySelectorAll('.social-dropdown').forEach(d => {
+        if (d !== dropdown) d.classList.remove('is-open');
+      });
+      document.querySelectorAll('.social-toggle').forEach(t => {
+        if (t !== toggle) t.setAttribute('aria-expanded', 'false');
+      });
 
-  document.addEventListener('click', (e) => {
-    if (!socialDropdown.contains(e.target) && e.target !== socialToggle) {
-      socialDropdown.classList.remove('is-open');
-      socialToggle.setAttribute('aria-expanded', 'false');
-    }
-  });
+      const isOpen = dropdown.classList.toggle('is-open');
+      toggle.setAttribute('aria-expanded', String(isOpen));
+    });
 
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') {
-      socialDropdown.classList.remove('is-open');
-      socialToggle.setAttribute('aria-expanded', 'false');
-    }
-  });
+    document.addEventListener('click', (e) => {
+      if (!dropdown.contains(e.target) && e.target !== toggle) {
+        dropdown.classList.remove('is-open');
+        toggle.setAttribute('aria-expanded', 'false');
+      }
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        dropdown.classList.remove('is-open');
+        toggle.setAttribute('aria-expanded', 'false');
+      }
+    });
+  }
 }
+
+// Initialisation des deux menus
+setupDropdown('socialToggle', 'socialDropdown');
+setupDropdown('contactToggle', 'contactDropdown');
 
 // Footer year
 const yearEl = document.getElementById('year');
