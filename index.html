@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jules Duffos - Portfolio | Caméra & Light Assistant</title>
-    <!-- Lien vers les polices Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
@@ -12,7 +11,6 @@
 </head>
 <body>
 
-    <!-- HEADER : Contact à gauche, Social à droite -->
     <header>
         <div class="dropdown-container">
             <button class="dropdown-btn" onclick="toggleDropdown('contact-dropdown')">CONTACT</button>
@@ -33,14 +31,12 @@
 
     <div class="container">
 
-        <!-- TITRE PRINCIPAL -->
         <section class="hero-section">
-            <h1 class="hero-title">PORTFOLIO / CAMERA / LIGHT ASSISTANT</h1>
+            <h1 class="hero-name">JULES DUFFOS</h1>
+            <p class="hero-subtitle">PORTFOLIO / CAMERA / LIGHT ASSISTANT</p>
         </section>
 
-        <!-- GRILLE DE 4 VIDÉOS -->
         <div class="videos-grid">
-            <!-- Vidéo 1 -->
             <div class="project-card">
                 <div class="media-container">
                     <video src="TTB montage.mp4" autoplay muted loop playsinline></video>
@@ -51,7 +47,6 @@
                 </div>
             </div>
 
-            <!-- Vidéo 2 -->
             <div class="project-card">
                 <div class="media-container">
                     <video src="Timeline-1.mp4" autoplay muted loop playsinline></video>
@@ -62,7 +57,6 @@
                 </div>
             </div>
 
-            <!-- Vidéo 3 -->
             <div class="project-card">
                 <div class="media-container">
                     <video src="VID_20250604_072546_499.mp4" autoplay muted loop playsinline></video>
@@ -73,7 +67,6 @@
                 </div>
             </div>
 
-            <!-- Vidéo 4 -->
             <div class="project-card">
                 <div class="media-container">
                     <video src="VID_20250612_140637_022.mp4" autoplay muted loop playsinline></video>
@@ -83,11 +76,8 @@
                     <span class="tag">LUMIÈRE</span>
                 </div>
             </div>
-        </div>
 
-        <!-- CINQUIÈME VIDÉO CENTRÉE (Kinect) -->
-        <div class="videos-grid-centered">
-            <div class="project-card project-card-centered-video">
+            <div class="project-card">
                 <div class="media-container">
                     <video src="kinect-porte-follio_-1.mp4" autoplay muted loop playsinline></video>
                 </div>
@@ -96,9 +86,18 @@
                     <span class="tag">KINECT</span>
                 </div>
             </div>
+
+            <div class="project-card">
+                <div class="media-container">
+                    <video src="Timeline-1.mp4" autoplay muted loop playsinline></video>
+                </div>
+                <div class="project-info">
+                    <span class="project-title">PROJET 6</span>
+                    <span class="tag">AUTRE</span>
+                </div>
+            </div>
         </div>
 
-        <!-- SECTION PHOTOGRAPHIE ARGENTIQUE -->
         <section class="photo-section">
             <h2 class="photo-title">PHOTOGRAPHIE ARGENTIQUE</h2>
             <div class="photo-grid">
@@ -123,13 +122,11 @@
 
     </div>
 
-    <!-- MODAL LIGHTBOX -->
     <div id="lightbox-modal" class="lightbox-modal" onclick="closeLightbox()">
         <span class="lightbox-close">&times;</span>
         <img id="lightbox-img" src="" alt="Agrandissement photo">
     </div>
 
-    <!-- SCRIPTS JAVASCRIPT -->
     <script>
         function toggleDropdown(id) {
             const dropdown = document.getElementById(id);
