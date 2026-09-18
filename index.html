@@ -3,170 +3,167 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jules Duflos - Portfolio/title></title>
+    <title>Jules Duffos - Portfolio | Caméra & Light Assistant</title>
+    <!-- Lien vers les polices Google Fonts (Anton pour le titre) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <!-- HEADER : Contact à gauche, Social à droite -->
     <header>
-        <div class="contact-container">
-            <button class="contact-btn" id="contact-dropdown">Contact</button>
-            <div class="dropdown-content" id="contact-dropdown">
-                <a href="mailto:julesduflos2gmail.com">julesduflos2gmail.com</a>
-                <a href="https://www.linkedin.com/in/julesduflos/" target="_blank" rel="noopener">LinkedIn</a>
+        <div class="dropdown-container">
+            <button class="dropdown-btn" onclick="toggleDropdown('contact-dropdown')">CONTACT</button>
+            <div id="contact-dropdown" class="dropdown-content">
+                <a href="mailto:julesduffos1@gmail.com">julesduffos1@gmail.com</a>
+                <a href="tel:+33000000000">+33 6 00 00 00 00</a>
             </div>
         </div>
 
         <div class="dropdown-container">
-            <button class="dropdown-btn" id="social-dropdown">Social</button>
-            <div class="dropdown-content" id="social-dropdown">
-                <a href="https://www.linkedin.com/in/julesduflos/" target="_blank" rel="noopener">LinkedIn</a>
-                <a href="https://www.instagram.com/julesduflos/" target="_blank" rel="noopener">Instagram</a>
+            <button class="dropdown-btn" onclick="toggleDropdown('social-dropdown')">SOCIAL</button>
+            <div id="social-dropdown" class="dropdown-content">
+                <a href="https://www.linkedin.com/in/jules-duffos/" target="_blank">LinkedIn</a>
+                <a href="https://www.instagram.com" target="_blank">Instagram</a>
             </div>
         </div>
     </header>
 
-    <!-- SECTION PRINCIPALE -->
-    <main class="container">
+    <div class="container">
 
-        <!-- SECTION TITRE PRINCIPAL -->
+        <!-- TITRE PRINCIPAL -->
         <section class="hero-section">
             <h1 class="hero-title">PORTFOLIO / CAMERA / LIGHT ASSISTANT</h1>
         </section>
 
-        <!-- SECTION VIDEOS -->
-        <section class="videos-grid">
-
-            <!-- VIDEO 1 : Mis à jour avec les nouveaux textes -->
+        <!-- GRILLE DE 4 VIDÉOS -->
+        <div class="videos-grid">
+            <!-- Vidéo 1 -->
             <div class="project-card">
                 <div class="media-container">
-                    <video autoplay loop muted playsinline>
-                        <source src="https://pub-d598919c97b34fd5850a4a1b05d93234.r2.dev/Timeline-1.mp4" type="video/mp4">
-                    </video>
+                    <video src="7T8 montage.mov" autoplay muted loop playsinline></video>
                 </div>
                 <div class="project-info">
-                    <span class="project-title">1er AC</span>
-                    <span class="tag">alexa 35</span>
+                    <span class="project-title">1ER AC</span>
+                    <span class="tag">ALEXA 35</span>
                 </div>
             </div>
 
-            <!-- VIDEO 2 -->
+            <!-- Vidéo 2 -->
             <div class="project-card">
                 <div class="media-container">
-                    <video autoplay loop muted playsinline>
-                        <source src="https://pub-d598919c97b34fd5850a4a1b05d93234.r2.dev/VID_20250604_072546_499.mp4" type="video/mp4">
-                    </video>
+                    <video src="IMG_20250901_140657_000.mov" autoplay muted loop playsinline></video>
                 </div>
                 <div class="project-info">
-                    <span class="project-title">Projet 2</span>
-                    <span class="tag">alexa 35</span>
+                    <span class="project-title">PROJET 2</span>
+                    <span class="tag">ALEXA 35</span>
                 </div>
             </div>
 
-            <!-- VIDEO 3 -->
+            <!-- Vidéo 3 -->
             <div class="project-card">
                 <div class="media-container">
-                    <video autoplay loop muted playsinline>
-                        <source src="https://pub-d598919c97b34fd5850a4a1b05d93234.r2.dev/20250612_143637_822.mp4" type="video/mp4">
-                    </video>
+                    <video src="IMG_20250901_140807_000.mov" autoplay muted loop playsinline></video>
                 </div>
                 <div class="project-info">
-                    <span class="project-title">Projet 3</span>
-                    <span class="tag">cadreur</span>
+                    <span class="project-title">PROJET 3</span>
+                    <span class="tag">CADREUR</span>
                 </div>
             </div>
 
-            <!-- VIDEO 4 -->
+            <!-- Vidéo 4 -->
             <div class="project-card">
                 <div class="media-container">
-                    <video autoplay loop muted playsinline>
-                        <source src="https://pub-d598919c97b34fd5850a4a1b05d93234.r2.dev/TTB montage.mp4" type="video/mp4">
-                    </video>
+                    <video src="IMG_20250901_172048_000.mov" autoplay muted loop playsinline></video>
                 </div>
                 <div class="project-info">
-                    <span class="project-title">Projet 4</span>
-                    <span class="tag">lumière</span>
+                    <span class="project-title">PROJET 4</span>
+                    <span class="tag">LUMIÈRE</span>
                 </div>
             </div>
+        </div>
 
-        </section>
-
-        <!-- VIDEO 5 : Kinect centrée en bas -->
-        <section class="videos-grid-centered">
+        <!-- CINQUIÈME VIDÉO CENTRÉE (Kinect) -->
+        <div class="videos-grid-centered">
             <div class="project-card project-card-centered-video">
                 <div class="media-container">
-                    <video autoplay loop muted playsinline>
-                        <source src="https://pub-d598919c97b34fd5850a4a1b05d93234.r2.dev/kinect-porte-folio_3.mp4" type="video/mp4">
-                    </video>
+                    <video src="kinect-port folio_1.mp4" autoplay muted loop playsinline></video>
                 </div>
                 <div class="project-info">
-                    <span class="project-title">Projet 5</span>
-                    <span class="tag">kinect</span>
+                    <span class="project-title">PROJET 5</span>
+                    <span class="tag">KINECT</span>
                 </div>
             </div>
-        </section>
+        </div>
 
         <!-- SECTION PHOTOGRAPHIE ARGENTIQUE -->
         <section class="photo-section">
             <h2 class="photo-title">PHOTOGRAPHIE ARGENTIQUE</h2>
-            
             <div class="photo-grid">
-                <div class="photo-card" onclick="openLightbox('https://pub-d598919c97b34fd5850a4a1b05d93234.r2.dev/Still 2026-09-09 134125_1.1.1.jpg')">
-                    <img src="https://pub-d598919c97b34fd5850a4a1b05d93234.r2.dev/Still 2026-09-09 134125_1.1.1.jpg" alt="Photographie argentique 1">
-                    <span class="photo-zoom-tag"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='white' viewBox='0 0 16 16'%3E%3Cpath d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0'%3E%3C/path%3E%3C/svg%3E Agrandissement photo</span>
+                <div class="photo-card" onclick="openLightbox('gmail_20250907_105806.png')">
+                    <img src="gmail_20250907_105806.png" alt="Photo argentique">
+                    <div class="photo-zoom-tag">Agrandir</div>
                 </div>
-                <div class="photo-card" onclick="openLightbox('https://pub-d598919c97b34fd5850a4a1b05d93234.r2.dev/Still 2026-09-09 134324_3.6.1.jpg')">
-                    <img src="https://pub-d598919c97b34fd5850a4a1b05d93234.r2.dev/Still 2026-09-09 134324_3.6.1.jpg" alt="Photographie argentique 2">
-                    <span class="photo-zoom-tag"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='white' viewBox='0 0 16 16'%3E%3Cpath d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0'%3E%3C/path%3E%3C/svg%3E Agrandissement photo</span>
+                <div class="photo-card" onclick="openLightbox('gmail_20250907_105806.png')">
+                    <img src="gmail_20250907_105806.png" alt="Photo argentique">
+                    <div class="photo-zoom-tag">Agrandir</div>
                 </div>
-                <div class="photo-card" onclick="openLightbox('https://pub-d598919c97b34fd5850a4a1b05d93234.r2.dev/Still 2026-09-09 142249_1.1.1.jpg')">
-                    <img src="https://pub-d598919c97b34fd5850a4a1b05d93234.r2.dev/Still 2026-09-09 142249_1.1.1.jpg" alt="Photographie argentique 3">
-                    <span class="photo-zoom-tag"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='white' viewBox='0 0 16 16'%3E%3Cpath d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0'%3E%3C/path%3E%3C/svg%3E Agrandissement photo</span>
+                <div class="photo-card" onclick="openLightbox('gmail_20250907_105806.png')">
+                    <img src="gmail_20250907_105806.png" alt="Photo argentique">
+                    <div class="photo-zoom-tag">Agrandir</div>
                 </div>
-                <div class="photo-card" onclick="openLightbox('https://pub-d598919c97b34fd5850a4a1b05d93234.r2.dev/Still 2026-09-09 142257_1.1.1.jpg')">
-                    <img src="https://pub-d598919c97b34fd5850a4a1b05d93234.r2.dev/Still 2026-09-09 142257_1.1.1.jpg" alt="Photographie argentique 4">
-                    <span class="photo-zoom-tag"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='white' viewBox='0 0 16 16'%3E%3Cpath d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0'%3E%3C/path%3E%3C/svg%3E Agrandissement photo</span>
+                <div class="photo-card" onclick="openLightbox('gmail_20250907_105806.png')">
+                    <img src="gmail_20250907_105806.png" alt="Photo argentique">
+                    <div class="photo-zoom-tag">Agrandir</div>
                 </div>
             </div>
         </section>
 
-    </main>
+    </div>
 
-    <!-- MODAL LIGHTBOX -->
+    <!-- MODAL LIGHTBOX (Visionneuse photo) -->
     <div id="lightbox-modal" class="lightbox-modal" onclick="closeLightbox()">
         <span class="lightbox-close">&times;</span>
         <img id="lightbox-img" src="" alt="Agrandissement photo">
     </div>
 
+    <!-- SCRIPTS JAVASCRIPT -->
     <script>
         // Gestion des menus déroulants
-        window.addEventListener('click', function(event) {
-            const dropdowns = document.querySelectorAll('.dropdown-container');
-            dropdowns.forEach(container => {
-                if (container.contains(event.target)) {
-                    const content = container.querySelector('.dropdown-content');
-                    content.classList.toggle('active');
-                } else {
-                    container.querySelector('.dropdown-content').classList.remove('active');
+        function toggleDropdown(id) {
+            const dropdown = document.getElementById(id);
+            const allDropdowns = document.querySelectorAll('.dropdown-content');
+            
+            allDropdowns.forEach(item => {
+                if (item !== dropdown) {
+                    item.classList.remove('active');
                 }
             });
-        });
+            
+            dropdown.classList.toggle('active');
+        }
+
+        window.onclick = function(event) {
+            if (!event.target.matches('.dropdown-btn')) {
+                document.querySelectorAll('.dropdown-content').forEach(item => {
+                    item.classList.remove('active');
+                });
+            }
+        }
 
         // Fonctions Lightbox
-        function openLightbox(src) {
-            const lightbox = document.getElementById('lightbox-modal');
+        function openLightbox(imgSrc) {
+            const modal = document.getElementById('lightbox-modal');
             const lightboxImg = document.getElementById('lightbox-img');
-            lightboxImg.src = src;
-            lightbox.classList.add('active');
+            lightboxImg.src = imgSrc;
+            modal.classList.add('active');
         }
 
         function closeLightbox() {
-            const lightbox = document.getElementById('lightbox-modal');
-            lightbox.classList.remove('active');
+            const modal = document.getElementById('lightbox-modal');
+            modal.classList.remove('active');
         }
     </script>
 </body>
