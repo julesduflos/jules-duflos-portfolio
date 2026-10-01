@@ -3,26 +3,37 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Jules Duflos — Portfolio</title>
+<title>Jules Duflos — Image / Caméra / Light Assistant</title>
+<meta name="description" content="Portfolio de Jules Duflos, assistant image, caméra et lumière (1er AC, cadreur). Paris / Nice.">
+<meta property="og:title" content="Jules Duflos — Portfolio">
+<meta property="og:description" content="Image / Caméra / Light Assistant. Paris / Nice.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://julesduflos.com/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600&display=swap">
 <link rel="stylesheet" href="style.css">
+<script src="script.js" defer></script>
 </head>
 <body>
 
 <header class="site-header">
-  <div class="contact-menu" style="position: relative;">
-    <button class="header-link social-toggle" id="contactToggle" aria-expanded="false">Contact</button>
+  <div class="contact-menu">
+    <button class="header-link social-toggle" id="contactToggle" aria-expanded="false" aria-controls="contactDropdown">Contact</button>
     <div class="social-dropdown" id="contactDropdown">
-      <a href="tel:0651998856">06 51 99 88 56</a>
+      <a href="tel:+33651998856">06 51 99 88 56</a>
       <a href="mailto:julesduflos2@gmail.com">julesduflos2@gmail.com</a>
     </div>
   </div>
+
   <p class="header-location">
     <span class="pin" aria-hidden="true">&#128205;</span> Paris / Nice
   </p>
 
   <div class="social-menu">
-    <button class="header-link social-toggle" id="socialToggle" aria-expanded="false">Social</button>
+    <button class="header-link social-toggle" id="socialToggle" aria-expanded="false" aria-controls="socialDropdown">Social</button>
     <div class="social-dropdown" id="socialDropdown">
+      <!-- TODO : remplacer par l'URL exacte de tes profils -->
       <a href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>
       <a href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram</a>
     </div>
@@ -31,20 +42,17 @@
 
 <main>
 
-  <!-- ===== HERO ===== -->
   <section class="hero">
     <h1 class="hero-title">Jules Duflos</h1>
     <p class="hero-subtitle">Image / Caméra / Light Assistant</p>
   </section>
 
-  <!-- ===== PROJETS (videos) ===== -->
-  <section class="projects">
+  <section class="projects" aria-label="Projets vidéo">
     <div class="projects-grid">
 
       <article class="project-card">
-        <div class="media placeholder-video" data-file="1ER_AC.mp4">
-          <video autoplay muted loop playsinline poster="">
-            <!-- Remplace par l'URL de ta vidéo (ex: depuis ton bucket) -->
+        <div class="media">
+          <video muted loop playsinline preload="metadata" aria-label="Extrait 1er AC, Alexa 35 hi-5">
             <source src="https://pub-d598919c97b34fd5850a4a1b05d93234.r2.dev/VID_20250613_030058_039.mp4" type="video/mp4">
           </video>
         </div>
@@ -55,8 +63,8 @@
       </article>
 
       <article class="project-card">
-        <div class="media placeholder-video" data-file="Cadreur.mp4">
-          <video autoplay muted loop playsinline poster="">
+        <div class="media">
+          <video muted loop playsinline preload="metadata" aria-label="Extrait cadreur, FX3 A7S III FX6">
             <source src="https://pub-d598919c97b34fd5850a4a1b05d93234.r2.dev/TTB%20montage.mp4" type="video/mp4">
           </video>
         </div>
@@ -67,8 +75,8 @@
       </article>
 
       <article class="project-card">
-        <div class="media placeholder-video" data-file="Cadreur.mp4">
-          <video autoplay muted loop playsinline poster="">
+        <div class="media">
+          <video muted loop playsinline preload="metadata" aria-label="Extrait cadreur, FX3">
             <source src="https://pub-d598919c97b34fd5850a4a1b05d93234.r2.dev/VID_20250612_140637_022.mp4" type="video/mp4">
           </video>
         </div>
@@ -79,8 +87,8 @@
       </article>
 
       <article class="project-card">
-        <div class="media placeholder-video" data-file="Cadreur.mp4">
-          <video autoplay muted loop playsinline poster="">
+        <div class="media">
+          <video muted loop playsinline preload="metadata" aria-label="Extrait cadreur, Alexa 35">
             <source src="https://pub-d598919c97b34fd5850a4a1b05d93234.r2.dev/VID_20250604_072546_499.mp4" type="video/mp4">
           </video>
         </div>
@@ -91,8 +99,8 @@
       </article>
 
       <article class="project-card">
-        <div class="media placeholder-video" data-file="1er AC.mp4">
-          <video autoplay muted loop playsinline poster="">
+        <div class="media">
+          <video muted loop playsinline preload="metadata" aria-label="Extrait 1er AC, Alexa 35 Nucleus-M">
             <source src="https://pub-d598919c97b34fd5850a4a1b05d93234.r2.dev/Timeline-1.mp4" type="video/mp4">
           </video>
         </div>
@@ -103,8 +111,8 @@
       </article>
 
       <article class="project-card">
-        <div class="media placeholder-video" data-file="Kinect.mp4">
-          <video autoplay muted loop playsinline poster="">
+        <div class="media">
+          <video muted loop playsinline preload="metadata" aria-label="Projet Kinect 3D">
             <source src="https://pub-d598919c97b34fd5850a4a1b05d93234.r2.dev/kinect-porte-follio-_1_.mp4" type="video/mp4">
           </video>
         </div>
@@ -117,70 +125,38 @@
     </div>
   </section>
 
-  <!-- ===== PHOTOGRAPHIE ARGENTIQUE SOUS-MARINE ===== -->
-  <section class="sous-marine">
+  <section class="sous-marine" aria-labelledby="sm-title">
     <div class="sous-marine-title-wrap">
-      <h2 class="sous-marine-title">
+      <h2 class="sous-marine-title" id="sm-title">
         <span>Photographie Argentique</span>
         <span>Sous&#8209;Marine</span>
       </h2>
     </div>
 
+    <!-- TODO : affiner les alt avec une vraie description de chaque photo -->
     <div class="sous-marine-grid">
-
-      <div class="sm-item">
-        <div class="media placeholder-photo" data-file="Still_2026-09-09_134125.jpg">
-          <img src="https://pub-d598919c97b34fd5850a4a1b05d93234.r2.dev/Still%202026-09-09%20134125_1.1.1.jpg" alt="">
-        </div>
-        <div class="sm-caption" contenteditable="true" data-placeholder=""></div>
-      </div>
-
-      <div class="sm-item">
-        <div class="media placeholder-photo" data-file="Still_2026-09-09_134224.jpg">
-          <img src="https://pub-d598919c97b34fd5850a4a1b05d93234.r2.dev/Still%202026-09-09%20134224_1.4.1.jpg" alt="">
-        </div>
-        <div class="sm-caption" contenteditable="true" data-placeholder=""></div>
-      </div>
-
-      <div class="sm-item">
-        <div class="media placeholder-photo" data-file="Still_2026-09-09_134240.jpg">
-          <img src="https://pub-d598919c97b34fd5850a4a1b05d93234.r2.dev/Still%202026-09-09%20134240_1.6.1.jpg" alt="">
-        </div>
-        <div class="sm-caption" contenteditable="true" data-placeholder=""></div>
-      </div>
-
-      <div class="sm-item">
-        <div class="media placeholder-photo" data-file="Still_2026-09-09_142249.jpg">
-          <img src="https://pub-d598919c97b34fd5850a4a1b05d93234.r2.dev/Still%202026-09-09%20142249_1.10.1.jpg" alt="">
-        </div>
-        <div class="sm-caption" contenteditable="true" data-placeholder=""></div>
-      </div>
-
-      <div class="sm-item">
-        <div class="media placeholder-photo" data-file="Still_2026-09-09_142257.jpg">
-          <img src="https://pub-d598919c97b34fd5850a4a1b05d93234.r2.dev/Still%202026-09-09%20142257_1.11.1.jpg" alt="">
-        </div>
-        <div class="sm-caption" contenteditable="true" data-placeholder=""></div>
-      </div>
-
-      </div>
+      <div class="sm-item"><div class="media"><img loading="lazy" src="https://pub-d598919c97b34fd5850a4a1b05d93234.r2.dev/Still%202026-09-09%20134125_1.1.1.jpg" alt="Photographie argentique sous-marine 1"></div></div>
+      <div class="sm-item"><div class="media"><img loading="lazy" src="https://pub-d598919c97b34fd5850a4a1b05d93234.r2.dev/Still%202026-09-09%20134224_1.4.1.jpg" alt="Photographie argentique sous-marine 2"></div></div>
+      <div class="sm-item"><div class="media"><img loading="lazy" src="https://pub-d598919c97b34fd5850a4a1b05d93234.r2.dev/Still%202026-09-09%20134240_1.6.1.jpg" alt="Photographie argentique sous-marine 3"></div></div>
+      <div class="sm-item"><div class="media"><img loading="lazy" src="https://pub-d598919c97b34fd5850a4a1b05d93234.r2.dev/Still%202026-09-09%20142249_1.10.1.jpg" alt="Photographie argentique sous-marine 4"></div></div>
+      <div class="sm-item"><div class="media"><img loading="lazy" src="https://pub-d598919c97b34fd5850a4a1b05d93234.r2.dev/Still%202026-09-09%20142257_1.11.1.jpg" alt="Photographie argentique sous-marine 5"></div></div>
+    </div>
   </section>
-  
+
 </main>
 
 <footer class="site-footer">
   <p>&copy; <span id="year"></span> Jules Duflos</p>
 </footer>
 
-<script src="script.js"></script>
-  <!-- Lightbox pour la galerie -->
-<div class="lightbox-modal" id="lightboxModal">
+<div class="lightbox-modal" id="lightboxModal" role="dialog" aria-modal="true" aria-label="Galerie photo">
   <button class="lightbox-close" id="lightboxClose" aria-label="Fermer">&#10005;</button>
-  <button class="lightbox-prev" id="lightboxPrev" aria-label="Précédent">&#10094;</button>
+  <button class="lightbox-prev" id="lightboxPrev" aria-label="Photo précédente">&#10094;</button>
   <div class="lightbox-content">
     <img id="lightboxImg" src="" alt="">
   </div>
-  <button class="lightbox-next" id="lightboxNext" aria-label="Suivant">&#10095;</button>
+  <button class="lightbox-next" id="lightboxNext" aria-label="Photo suivante">&#10095;</button>
 </div>
+
 </body>
 </html>
