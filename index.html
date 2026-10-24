@@ -1,5 +1,290 @@
-<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#ffffff"><title>Jules Duflos — Image / Caméra / Lumière</title><meta name="description" content="Portfolio de Jules Duflos. Image, caméra et lumière. Paris / Nice."><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"><link rel="stylesheet" href="style.css"></head><body>
-<header class="site-header"><div class="menu contact-menu"><button class="menu-toggle" aria-expanded="false" aria-controls="contactLinks">Contact</button><div class="menu-links" id="contactLinks" inert><a href="mailto:julesduflos2@gmail.com">julesduflos2@gmail.com</a><a href="tel:+33651998856">06 51 99 88 56</a></div></div><p class="location">Paris Nice</p><div class="menu social-menu"><button class="menu-toggle" aria-expanded="false" aria-controls="socialLinks">Social</button><div class="menu-links" id="socialLinks" inert><a href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram</a><a href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a></div></div></header>
-<main><section class="hero" aria-label="Jules Duflos"><h1 aria-label="Jules Duflos"><span aria-hidden="true" class="focus-name"></span></h1><p>Image / Caméra / Light Assistant</p></section><section class="projects" aria-label="Projets vidéo"><div class="projects-grid" id="projects"></div></section><div class="underwater-scene"><canvas id="bubbles" aria-hidden="true"></canvas><section class="underwater" aria-labelledby="photoTitle"><h2 id="photoTitle">Photographie Argentique<br>Sous-Marine</h2><div class="photo-grid" id="photos"></div></section>
-<footer><span class="secret-message" aria-hidden="true">aller vzy clique sur les bulles pour te détendre</span><span class="footer-credit">© <span id="year">2026</span> Jules Duflos</span><span class="secret-message" aria-hidden="true">aller vzy clique sur les bulles pour te détendre</span></footer></div></main><div id="cursor" aria-hidden="true"></div>
-<dialog id="viewer" aria-label="Visionneuse"><button class="close" aria-label="Fermer">×</button><div id="viewerContent"></div><div class="viewer-nav"><button id="previous" aria-label="Précédent">←</button><p id="viewerCaption"></p><button id="next" aria-label="Suivant">→</button></div></dialog><script src="script.js"></script></body></html>
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1"
+  >
+
+  <meta name="theme-color" content="#ffffff">
+
+  <title>Jules Duflos — Image / Caméra / Lumière</title>
+
+  <meta
+    name="description"
+    content="Portfolio de Jules Duflos. Image, caméra et lumière. Paris / Nice."
+  >
+
+  <!-- Polices et style -->
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600&display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Logo de l’onglet -->
+  <link
+    rel="icon"
+    href="favicon.ico?v=2"
+    sizes="any"
+  >
+
+  <link
+    rel="icon"
+    type="image/png"
+    sizes="32x32"
+    href="favicon.png?v=2"
+  >
+
+  <link
+    rel="apple-touch-icon"
+    href="apple-touch-icon.png?v=2"
+  >
+
+  <!-- Aperçu lors du partage du lien -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:site_name" content="Jules Duflos">
+
+  <meta
+    property="og:title"
+    content="Jules Duflos — Image / Caméra / Lumière"
+  >
+
+  <meta
+    property="og:description"
+    content="Cadreur, assistant caméra et électro. Films et photographie argentique sous-marine. Paris / Nice."
+  >
+
+  <meta
+    property="og:url"
+    content="https://julesduflos.com/"
+  >
+
+  <meta
+    property="og:image"
+    content="https://julesduflos.com/partage.jpg?v=1"
+  >
+
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+
+  <meta
+    property="og:image:alt"
+    content="Portfolio Jules Duflos : films et photographie argentique sous-marine"
+  >
+
+  <meta
+    name="twitter:card"
+    content="summary_large_image"
+  >
+
+  <meta
+    name="twitter:title"
+    content="Jules Duflos — Image / Caméra / Lumière"
+  >
+
+  <meta
+    name="twitter:description"
+    content="Films et photographie argentique sous-marine. Paris / Nice."
+  >
+
+  <meta
+    name="twitter:image"
+    content="https://julesduflos.com/partage.jpg?v=1"
+  >
+</head>
+
+<body>
+
+  <header class="site-header">
+
+    <div class="menu contact-menu">
+
+      <button
+        class="menu-toggle"
+        aria-expanded="false"
+        aria-controls="contactLinks"
+      >
+        Contact
+      </button>
+
+      <div
+        class="menu-links"
+        id="contactLinks"
+        inert
+      >
+        <a href="mailto:julesduflos2@gmail.com">
+          julesduflos2@gmail.com
+        </a>
+
+        <a href="tel:+33651998856">
+          06 51 99 88 56
+        </a>
+      </div>
+
+    </div>
+
+    <p class="location">Paris Nice</p>
+
+    <div class="menu social-menu">
+
+      <button
+        class="menu-toggle"
+        aria-expanded="false"
+        aria-controls="socialLinks"
+      >
+        Social
+      </button>
+
+      <div
+        class="menu-links"
+        id="socialLinks"
+        inert
+      >
+        <a
+          href="https://www.instagram.com/"
+          target="_blank"
+          rel="noopener"
+        >
+          Instagram
+        </a>
+
+        <a
+          href="https://www.linkedin.com/"
+          target="_blank"
+          rel="noopener"
+        >
+          LinkedIn
+        </a>
+      </div>
+
+    </div>
+
+  </header>
+
+  <main>
+
+    <section class="hero" aria-label="Jules Duflos">
+
+      <h1 aria-label="Jules Duflos">
+        <span
+          class="focus-name"
+          aria-hidden="true"
+        ></span>
+      </h1>
+
+      <p>Image / Caméra / Light Assistant</p>
+
+    </section>
+
+    <section
+      class="projects"
+      aria-label="Projets vidéo"
+    >
+      <div
+        class="projects-grid"
+        id="projects"
+      ></div>
+    </section>
+
+    <div class="underwater-scene">
+
+      <canvas
+        id="bubbles"
+        aria-hidden="true"
+      ></canvas>
+
+      <section
+        class="underwater"
+        aria-labelledby="photoTitle"
+      >
+
+        <h2 id="photoTitle">
+          Photographie Argentique<br>
+          Sous-Marine
+        </h2>
+
+        <div
+          class="photo-grid"
+          id="photos"
+        ></div>
+
+      </section>
+
+      <footer>
+
+        <span
+          class="secret-message"
+          aria-hidden="true"
+        >aller vzy clique sur les bulles pour te détendre</span>
+
+        <span class="footer-credit">
+          © <span id="year">2026</span> Jules Duflos
+        </span>
+
+        <span
+          class="secret-message"
+          aria-hidden="true"
+        >aller vzy clique sur les bulles pour te détendre</span>
+
+      </footer>
+
+    </div>
+
+  </main>
+
+  <div
+    id="cursor"
+    aria-hidden="true"
+  ></div>
+
+  <dialog
+    id="viewer"
+    aria-label="Visionneuse"
+  >
+
+    <button
+      class="close"
+      aria-label="Fermer"
+    >
+      ×
+    </button>
+
+    <div id="viewerContent"></div>
+
+    <div class="viewer-nav">
+
+      <button
+        id="previous"
+        aria-label="Précédent"
+      >
+        ←
+      </button>
+
+      <p id="viewerCaption"></p>
+
+      <button
+        id="next"
+        aria-label="Suivant"
+      >
+        →
+      </button>
+
+    </div>
+
+  </dialog>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
