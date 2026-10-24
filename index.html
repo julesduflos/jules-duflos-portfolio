@@ -2,161 +2,267 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Jules Duflos — Image / Caméra / Light Assistant</title>
-<meta name="description" content="Portfolio de Jules Duflos, assistant image, caméra et lumière (1er AC, cadreur). Paris / Nice.">
-<meta property="og:title" content="Jules Duflos — Portfolio">
-<meta property="og:description" content="Image / Caméra / Light Assistant. Paris / Nice.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://julesduflos.com/">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chiara Bianco</title>
+<meta name="description" content="Portfolio de Chiara Bianco.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600&display=swap">
-<link rel="stylesheet" href="style.css">
-<script src="script.js" defer></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #fff;
+    --ink: #000;
+    --pad: 3.3vw;
+    --font: "Hanken Grotesk", "Helvetica Neue", Arial, sans-serif;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--font);
+    font-weight: 300;
+  }
+  a { color: inherit; text-decoration: none; }
+
+  /* ---------- En-tête ---------- */
+  header {
+    position: fixed; top: 0; left: 0; width: 100%;
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 1.6rem var(--pad);
+    font-size: 1.35rem; font-weight: 400;
+    z-index: 50;
+    pointer-events: none;
+  }
+  header a { pointer-events: auto; }
+  .logo { display: flex; align-items: center; gap: .6rem; }
+  .logo i { width: .9rem; height: .9rem; border-radius: 50%; background: var(--ink); display: inline-block; }
+  header nav { position: absolute; left: 32%; font-weight: 500; font-size: 1.1rem; }
+
+  /* Menus déroulants (Contact, Social) */
+  .dd { position: relative; pointer-events: auto; display: inline-block; }
+  .dd-btn { font: inherit; color: inherit; background: none; border: 0; padding: 0; }
+  .dd-menu {
+    position: absolute; top: 100%; left: 0;
+    display: none; flex-direction: column;
+    padding-top: .5rem; gap: .15rem; white-space: nowrap;
+  }
+  .dd.right { text-align: right; }
+  .dd.right .dd-menu { left: auto; right: 0; align-items: flex-end; }
+  .dd:hover .dd-menu, .dd:focus-within .dd-menu, .dd.open .dd-menu { display: flex; }
+
+  /* ---------- Projets ---------- */
+  #projets { display: flex; padding: 14rem var(--pad) 12rem; }
+
+  .preview-col { width: 28.5%; margin-right: 10.7%; }
+  .preview-sticky { position: sticky; top: 8rem; }
+  .preview-media {
+    position: relative; width: 100%; padding-top: 100%;
+    background: #ececec; overflow: hidden; margin-bottom: 1.4rem;
+  }
+  .preview-media img, .preview-media video {
+    position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;
+  }
+  .preview-cat { font-size: 1.45rem; font-weight: 400; margin-bottom: .6rem; }
+  .preview-bio { font-size: 1.05rem; line-height: 1.45; font-weight: 400; max-width: 30ch; }
+
+  .list { width: 60%; }
+  .item {
+    display: block; width: fit-content;
+    font-size: clamp(2.6rem, 6.2vw, 6.4rem);
+    font-weight: 300; line-height: 1.05;
+    color: #000;
+  }
+
+  /* ---------- À propos ---------- */
+  #apropos { padding: 8rem var(--pad) 8rem; }
+  #apropos h2 { font-size: 1.8rem; font-weight: 500; margin-bottom: 1.5rem; }
+  #apropos p { font-size: 1.25rem; line-height: 1.5; font-weight: 400; width: min(60ch, 100%); margin-left: 39.2%; }
+
+  /* ---------- Pied de page ---------- */
+  footer { background: #000; color: #fff; padding: 6rem var(--pad) 4rem; }
+  footer h2 { font-size: 1.6rem; font-weight: 500; margin-bottom: 1rem; }
+  footer p { font-size: 1.15rem; font-weight: 400; margin-bottom: 1.2rem; }
+  footer a { font-style: italic; font-weight: 500; font-size: 1.25rem; }
+
+  /* ---------- Point qui suit la souris ---------- */
+  .dot {
+    position: fixed; top: 0; left: 0; z-index: 9999;
+    width: 14px; height: 14px; margin: -7px 0 0 -7px;
+    border-radius: 50%;
+    background: #fff;
+    mix-blend-mode: difference;
+    pointer-events: none;
+    opacity: 0;
+    will-change: transform;
+  }
+  @media (hover: hover) and (pointer: fine) {
+    html, a { cursor: none; }
+    .dot.on { opacity: 1; }
+  }
+
+  /* ---------- Mobile ---------- */
+  @media (max-width: 768px) {
+    html { font-size: 15px; }
+    header nav { display: none; }
+    #projets { flex-direction: column; padding: 7rem 1.5rem 6rem; }
+    .preview-col { display: none; }
+    .list { width: 100%; }
+    .item { font-size: 2.8rem; }
+    #apropos p { margin-left: 0; }
+  }
+</style>
 </head>
 <body>
 
-<header class="site-header">
-  <div class="contact-menu">
-    <button class="header-link social-toggle" id="contactToggle" aria-expanded="false" aria-controls="contactDropdown">Contact</button>
-    <div class="social-dropdown" id="contactDropdown">
-      <a href="tel:+33651998856">06 51 99 88 56</a>
-      <a href="mailto:julesduflos2@gmail.com">julesduflos2@gmail.com</a>
-    </div>
-  </div>
-
-  <p class="header-location">
-    <span class="pin" aria-hidden="true">&#128205;</span> Paris / Nice
-  </p>
-
-  <div class="social-menu">
-    <button class="header-link social-toggle" id="socialToggle" aria-expanded="false" aria-controls="socialDropdown">Social</button>
-    <div class="social-dropdown" id="socialDropdown">
-      <!-- TODO : remplacer par l'URL exacte de tes profils -->
-      <a href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>
-      <a href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram</a>
+<header>
+  <a href="#" class="logo">Chiara — Bianco <i></i></a>
+  <nav><a href="#projets">Projets</a>, <a href="#apropos">À propos</a>, <span class="dd" id="contactdd">
+      <button class="dd-btn" type="button" aria-expanded="false">Contact</button>
+      <span class="dd-menu">
+        <a href="mailto:chiarabianco@outlook.fr">chiarabianco@outlook.fr</a>
+        <a href="tel:+33643652168">06 43 65 21 68</a>
+      </span>
+    </span></nav>
+  <div class="dd right" id="social">
+    <button class="dd-btn" type="button" aria-expanded="false">Social</button>
+    <div class="dd-menu">
+      <a href="https://www.instagram.com/chiaraabnc/" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://www.linkedin.com/in/chiara-bianco-0170a1237/?isSelfProfile=false" target="_blank" rel="noopener">LinkedIn</a>
     </div>
   </div>
 </header>
 
 <main>
+  <section id="projets">
+    <div class="preview-col">
+      <div class="preview-sticky">
+        <div class="preview-media" id="media"></div>
+        <div class="preview-cat" id="cat"></div>
+        <p class="preview-bio" id="bio"></p>
+      </div>
+    </div>
 
-  <section class="hero">
-    <h1 class="hero-title">Jules Duflos</h1>
-    <p class="hero-subtitle">Image / Caméra / Light Assistant</p>
-  </section>
-
-  <section class="projects" aria-label="Projets vidéo">
-    <div class="projects-grid">
-
-      <article class="project-card">
-        <div class="media">
-          <video muted loop playsinline preload="metadata" aria-label="Extrait 1er AC, Alexa 35 hi-5">
-            <source src="https://pub-d598919c97b34fd5850a4a1b05d93234.r2.dev/VID_20250613_030058_039.mp4" type="video/mp4">
-          </video>
-        </div>
-        <div class="card-footer">
-          <span class="card-title">1er AC</span>
-          <span class="card-tag">Alexa 35 hi-5</span>
-        </div>
-      </article>
-
-      <article class="project-card">
-        <div class="media">
-          <video muted loop playsinline preload="metadata" aria-label="Extrait cadreur, FX3 A7S III FX6">
-            <source src="https://pub-d598919c97b34fd5850a4a1b05d93234.r2.dev/TTB%20montage.mp4" type="video/mp4">
-          </video>
-        </div>
-        <div class="card-footer">
-          <span class="card-title">Cadreur</span>
-          <span class="card-tag">Fx3 A7s3 Fx6</span>
-        </div>
-      </article>
-
-      <article class="project-card">
-        <div class="media">
-          <video muted loop playsinline preload="metadata" aria-label="Extrait cadreur, FX3">
-            <source src="https://pub-d598919c97b34fd5850a4a1b05d93234.r2.dev/VID_20250612_140637_022.mp4" type="video/mp4">
-          </video>
-        </div>
-        <div class="card-footer">
-          <span class="card-title">Cadreur</span>
-          <span class="card-tag">Fx3</span>
-        </div>
-      </article>
-
-      <article class="project-card">
-        <div class="media">
-          <video muted loop playsinline preload="metadata" aria-label="Extrait cadreur, Alexa 35">
-            <source src="https://pub-d598919c97b34fd5850a4a1b05d93234.r2.dev/VID_20250604_072546_499.mp4" type="video/mp4">
-          </video>
-        </div>
-        <div class="card-footer">
-          <span class="card-title">Cadreur</span>
-          <span class="card-tag">Alexa 35</span>
-        </div>
-      </article>
-
-      <article class="project-card">
-        <div class="media">
-          <video muted loop playsinline preload="metadata" aria-label="Extrait 1er AC, Alexa 35 Nucleus-M">
-            <source src="https://pub-d598919c97b34fd5850a4a1b05d93234.r2.dev/Timeline-1.mp4" type="video/mp4">
-          </video>
-        </div>
-        <div class="card-footer">
-          <span class="card-title">1er AC</span>
-          <span class="card-tag">Alexa 35 Nucleus-M</span>
-        </div>
-      </article>
-
-      <article class="project-card">
-        <div class="media">
-          <video muted loop playsinline preload="metadata" aria-label="Projet Kinect 3D">
-            <source src="https://pub-d598919c97b34fd5850a4a1b05d93234.r2.dev/kinect-porte-follio-_1_.mp4" type="video/mp4">
-          </video>
-        </div>
-        <div class="card-footer">
-          <span class="card-title">Kinect</span>
-          <span class="card-tag">3D</span>
-        </div>
-      </article>
-
+    <!--
+      POUR AJOUTER OU MODIFIER UN PROJET :
+      copie une ligne <a class="item" ...> et change :
+        - le texte entre les balises (le nom du projet)
+        - data-media : le chemin de l'image ou de la vidéo (.jpg, .png, .webp, .mp4)
+        - data-cat   : la catégorie (ex : Photographie)
+        - data-bio   : la petite bio sous le projet
+        - href       : le lien vers la page du projet (ou # pour l'instant)
+    -->
+    <div class="list" id="list">
+      <a class="item" href="#" data-media="media/projet1.jpg" data-cat="Cadreuse"
+         data-bio="Courte description du projet 1. Remplace ce texte par ta bio.">Quotidien</a>
+      <a class="item" href="#" data-media="media/projet2.jpg" data-cat="Cadreuse"
+         data-bio="Courte description du projet 2. Remplace ce texte par ta bio.">Belle et Bien</a>
+      <a class="item" href="#" data-media="media/projet3.mp4" data-cat="Vidéo"
+         data-bio="Courte description du projet 3. Remplace ce texte par ta bio.">Fashion Week</a>
     </div>
   </section>
 
-  <section class="sous-marine" aria-labelledby="sm-title">
-    <div class="sous-marine-title-wrap">
-      <h2 class="sous-marine-title" id="sm-title">
-        <span>Photographie Argentique</span>
-        <span>Sous&#8209;Marine</span>
-      </h2>
-    </div>
-
-    <!-- TODO : affiner les alt avec une vraie description de chaque photo -->
-    <div class="sous-marine-grid">
-      <div class="sm-item"><div class="media"><img loading="lazy" src="https://pub-d598919c97b34fd5850a4a1b05d93234.r2.dev/Still%202026-09-09%20134125_1.1.1.jpg" alt="Photographie argentique sous-marine 1"></div></div>
-      <div class="sm-item"><div class="media"><img loading="lazy" src="https://pub-d598919c97b34fd5850a4a1b05d93234.r2.dev/Still%202026-09-09%20134224_1.4.1.jpg" alt="Photographie argentique sous-marine 2"></div></div>
-      <div class="sm-item"><div class="media"><img loading="lazy" src="https://pub-d598919c97b34fd5850a4a1b05d93234.r2.dev/Still%202026-09-09%20134240_1.6.1.jpg" alt="Photographie argentique sous-marine 3"></div></div>
-      <div class="sm-item"><div class="media"><img loading="lazy" src="https://pub-d598919c97b34fd5850a4a1b05d93234.r2.dev/Still%202026-09-09%20142249_1.10.1.jpg" alt="Photographie argentique sous-marine 4"></div></div>
-      <div class="sm-item"><div class="media"><img loading="lazy" src="https://pub-d598919c97b34fd5850a4a1b05d93234.r2.dev/Still%202026-09-09%20142257_1.11.1.jpg" alt="Photographie argentique sous-marine 5"></div></div>
-    </div>
+  <section id="apropos">
+    <h2>À propos</h2>
+    <p>Écris ici une courte présentation de Chiara : son parcours, ce qu'elle fait, ce qui l'anime.</p>
   </section>
-
 </main>
 
-<footer class="site-footer">
-  <p>&copy; <span id="year"></span> Jules Duflos</p>
+<footer id="contact">
+  <h2>Contact</h2>
+  <p>Un projet en tête ? Écrivons-nous.</p>
+  <a href="mailto:chiarabianco@outlook.fr">chiarabianco@outlook.fr</a>
+  <p style="margin-top:1.2rem"><a href="tel:+33643652168">06 43 65 21 68</a></p>
 </footer>
 
-<div class="lightbox-modal" id="lightboxModal" role="dialog" aria-modal="true" aria-label="Galerie photo">
-  <button class="lightbox-close" id="lightboxClose" aria-label="Fermer">&#10005;</button>
-  <button class="lightbox-prev" id="lightboxPrev" aria-label="Photo précédente">&#10094;</button>
-  <div class="lightbox-content">
-    <img id="lightboxImg" src="" alt="">
-  </div>
-  <button class="lightbox-next" id="lightboxNext" aria-label="Photo suivante">&#10095;</button>
-</div>
+<div class="dot" id="dot"></div>
 
+<script>
+(function () {
+  var items = Array.prototype.slice.call(document.querySelectorAll('.item'));
+  var media = document.getElementById('media');
+  var cat = document.getElementById('cat');
+  var bio = document.getElementById('bio');
+  var list = document.getElementById('list');
+  var section = document.getElementById('projets');
+
+  /* ----- Menus déroulants (clic) ----- */
+  var dds = Array.prototype.slice.call(document.querySelectorAll('.dd'));
+  dds.forEach(function (dd) {
+    var btn = dd.querySelector('.dd-btn');
+    btn.addEventListener('click', function () {
+      var open = !dd.classList.contains('open');
+      dds.forEach(function (o) { o.classList.remove('open'); });
+      if (open) dd.classList.add('open');
+      btn.setAttribute('aria-expanded', open);
+    });
+  });
+  document.addEventListener('click', function (e) {
+    dds.forEach(function (dd) { if (!dd.contains(e.target)) dd.classList.remove('open'); });
+  });
+
+  /* ----- Aperçu à gauche ----- */
+  function show(item) {
+    var src = item.dataset.media || '';
+    media.innerHTML = '';
+    if (/\.(mp4|webm)$/i.test(src)) {
+      var v = document.createElement('video');
+      v.src = src; v.muted = true; v.loop = true; v.autoplay = true; v.playsInline = true;
+      v.onerror = function () { v.remove(); };
+      media.appendChild(v);
+      v.play && v.play().catch(function () {});
+    } else if (src) {
+      var img = document.createElement('img');
+      img.src = src; img.alt = item.textContent;
+      img.onerror = function () { img.remove(); };
+      media.appendChild(img);
+    }
+    cat.textContent = item.dataset.cat || '';
+    bio.textContent = item.dataset.bio || '';
+  }
+  items.forEach(function (it) {
+    it.addEventListener('mouseenter', function () { show(it); });
+    it.addEventListener('focus', function () { show(it); });
+  });
+  if (items.length) show(items[0]);
+
+  /* ----- Dégradé de gris selon la distance à la souris ----- */
+  var mouseX = -1, mouseY = -1, inside = false;
+  function paint() {
+    items.forEach(function (it) {
+      if (!inside) { it.style.color = '#000'; return; }
+      var r = it.getBoundingClientRect();
+      var d = Math.abs(mouseY - (r.top + r.height / 2));
+      var t = Math.min(d / (window.innerHeight * 0.55), 1);
+      var g = Math.round(205 * Math.pow(t, 0.8));
+      it.style.color = 'rgb(' + g + ',' + g + ',' + g + ')';
+    });
+  }
+  section.addEventListener('mouseenter', function () { inside = true; paint(); });
+  section.addEventListener('mouseleave', function () { inside = false; paint(); });
+  window.addEventListener('scroll', function () { if (inside) paint(); }, { passive: true });
+
+  /* ----- Point avec de l'inertie ----- */
+  var dot = document.getElementById('dot');
+  var x = 0, y = 0, tx = 0, ty = 0;
+  var SPEED = 0.14; /* plus petit = plus lourd (0.05 très lent, 0.3 presque collé) */
+
+  window.addEventListener('mousemove', function (e) {
+    tx = e.clientX; ty = e.clientY;
+    mouseX = e.clientX; mouseY = e.clientY;
+    if (!dot.classList.contains('on')) { x = tx; y = ty; dot.classList.add('on'); }
+    if (inside) paint();
+  });
+  document.addEventListener('mouseleave', function () { dot.classList.remove('on'); });
+
+  function loop() {
+    x += (tx - x) * SPEED;
+    y += (ty - y) * SPEED;
+    dot.style.transform = 'translate3d(' + x + 'px,' + y + 'px,0)';
+    requestAnimationFrame(loop);
+  }
+  loop();
+})();
+</script>
 </body>
 </html>
